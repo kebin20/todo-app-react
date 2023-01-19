@@ -15,16 +15,16 @@ function TodoInput(props) {
   }
 
   return (
-      <form onSubmit={formSubmitHandler}>
-        <div className={classes.form}>
-          <CheckButton />
-          <input
-            placeholder="Create a new todo..."
-            type="text"
-            onChange={todoInputChangeHandler}
-          />
-        </div>
-      </form>
+    <form onSubmit={formSubmitHandler}>
+      <div className={classes.form}>
+        <CheckButton />
+        <input
+          placeholder="Create a new todo..."
+          type="text"
+          onChange={todoInputChangeHandler}
+        />
+      </div>
+    </form>
   );
 }
 

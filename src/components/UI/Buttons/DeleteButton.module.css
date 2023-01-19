@@ -1,6 +1,8 @@
 .deletebutton {
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   border: 1px solid rgb(60, 77, 60);
   background-color: none;
+  font: inherit;
+  cursor: pointer;
 }

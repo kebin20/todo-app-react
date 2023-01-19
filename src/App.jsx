@@ -8,7 +8,7 @@ function App() {
       <header className={classes.header}>
         <nav className={classes.nav}>
           <h1 className={classes.nav__title}>Todo</h1>
-          <button className={classes.nav__toggle}>SUN</button>
+          <button className={classes.nav__togglebutton}></button>
         </nav>
         <TodoInput />
       </header>

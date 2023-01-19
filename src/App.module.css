@@ -1,16 +1,27 @@
 .header {
-  background-image: url(./assets/bg-mobile-light.jpg);
+  /* background-image: url(./assets/bg-mobile-light.jpg); */
+  background-color: blueviolet;
+  padding: 1em;
 }
 
 .nav {
   display: flex;
-  background-color: pink;
+  background: transparent;
   justify-content: space-between;
-  padding: 2em;
-  /* background-color: transparent; */
+  padding: 1em;
 }
 
 .nav__title {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav__togglebutton{
+  background-image: url("./assets/sun-regular.svg");
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 2em;
 }
