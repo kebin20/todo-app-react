@@ -1,17 +1,17 @@
 .header {
-  background-image: url(./assets/bg-mobile-light.jpg);
+  /* background-image: url(./assets/bg-mobile-light.jpg); */
+  background-color: blue;
 }
 
 .nav {
   display: flex;
+  background-color: pink;
   justify-content: space-between;
   padding: 2em;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .nav__title {
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
-
-
