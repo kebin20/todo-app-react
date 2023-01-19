@@ -1,11 +1,6 @@
-.inputcontainer {
-  background-color: transparent;
-  padding: 2em;
-  display: flex;
-}
-
 .form {
   display: flex;
   background-color: grey;
   padding: 1em;
+  margin: 1em;
 }

@@ -15,7 +15,6 @@ function TodoInput(props) {
   }
 
   return (
-    <div className={classes.inputcontainer}>
       <form onSubmit={formSubmitHandler}>
         <div className={classes.form}>
           <CheckButton />
@@ -26,7 +25,6 @@ function TodoInput(props) {
           />
         </div>
       </form>
-    </div>
   );
 }
 
