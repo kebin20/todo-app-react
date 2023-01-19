@@ -1,3 +1,7 @@
+.header {
+  background-image: url(./assets/bg-mobile-light.jpg);
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -9,3 +13,5 @@
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
+
+
