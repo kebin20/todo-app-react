@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: transparent;
+}
+
+.nav__title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
