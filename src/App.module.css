@@ -1,6 +1,6 @@
 .header {
   /* background-image: url(./assets/bg-mobile-light.jpg); */
-  background-color: blueviolet;
+  background: linear-gradient(to right,  hsl(235, 64%, 67%), hsl(280, 87%, 65%));
   padding: 1em;
 }
 
@@ -20,6 +20,8 @@
 }
 
 .nav__togglebutton{
+  border: none;
+  background-color: transparent;
   background-image: url("./assets/sun-regular.svg");
   background-repeat: no-repeat;
   width: 2em;

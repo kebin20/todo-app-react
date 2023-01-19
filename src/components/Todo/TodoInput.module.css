@@ -1,6 +1,16 @@
 .form {
   display: flex;
-  background-color: grey;
+  background-color: hsl(233, 14%, 35%);
+  border-radius: 6px;
   padding: 1em;
   margin: 1em;
+}
+
+.input {
+  background-color: hsl(233, 14%, 35%);
+  border: none;
+}
+
+input::placeholder {
+  color: hsl(234, 39%, 85%);
 }

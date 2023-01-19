@@ -2,7 +2,8 @@
   font: inherit;
   width: 1.5em;
   height: 1.5em;
-  border: 1px solid red;
+  border: 1px solid hsl(234, 39%, 85%);
+  background: transparent;
   border-radius: 50em;
   margin-right: 1em;
   cursor: pointer;

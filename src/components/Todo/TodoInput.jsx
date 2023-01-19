@@ -19,6 +19,7 @@ function TodoInput(props) {
       <div className={classes.form}>
         <CheckButton />
         <input
+          className={classes.input}
           placeholder="Create a new todo..."
           type="text"
           onChange={todoInputChangeHandler}
