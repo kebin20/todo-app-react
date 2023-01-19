@@ -1,5 +1,11 @@
-.form {
-  background-color: grey;
+.inputcontainer {
+  background-color: transparent;
   padding: 2em;
-  margin: 2em;
+  display: flex;
+}
+
+.form {
+  display: flex;
+  background-color: grey;
+  padding: 1em;
 }
