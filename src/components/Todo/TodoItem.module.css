@@ -1,0 +1,7 @@
+.todoitem {
+  display: flex;
+  background-color: hsl(233, 14%, 35%);
+  border-radius: 6px;
+  padding: 1em;
+  margin: 1em;
+}
