@@ -33,9 +33,9 @@ function App() {
         </nav>
         <TodoInput onAddTodo={addTodoHandler}/>
       </header>
-      <section>
+      <main>
         <TodoList items={todoItem} onDeleteItem={deleteTodoHandler}/>
-      </section>
+      </main>
     </React.Fragment>
   );
 }
