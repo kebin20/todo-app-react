@@ -7,7 +7,7 @@ function TodoList(props) {
     <ul className={classes.todolist}>
       {props.items.map((item) => (
         <TodoItem key={item.id} id={item.id} onDelete={item.onDeleteItem}>
-          {item.content}
+          {item.text}
         </TodoItem>
       ))}
     </ul>

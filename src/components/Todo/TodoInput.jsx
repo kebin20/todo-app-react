@@ -17,7 +17,7 @@ function TodoInput(props) {
   return (
     <form onSubmit={formSubmitHandler}>
       <div className={classes.form}>
-        <CheckButton />
+        <CheckButton type="submit">+</CheckButton>
         <input
           className={classes.input}
           placeholder="Create a new todo..."

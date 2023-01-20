@@ -17,7 +17,12 @@ function App() {
     });
   }
 
-  function deleteTodoHandler() {}
+  function deleteTodoHandler(itemId) {
+    setTodoItem(prevTodoItem => {
+      const updatedTodo = prevTodoItem.filter(item.id !== itemId)
+      return updatedTodo;
+    })
+  }
 
   return (
     <React.Fragment>
@@ -28,6 +33,9 @@ function App() {
         </nav>
         <TodoInput onAddTodo={addTodoHandler}/>
       </header>
+      <section>
+        <TodoList items={todoItem} onDelete={deleteTodoHandler}/>
+      </section>
     </React.Fragment>
   );
 }
