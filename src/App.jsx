@@ -24,7 +24,7 @@ function App() {
       <header className={classes.header}>
         <nav className={classes.nav}>
           <h1 className={classes.nav__title}>Todo</h1>
-          <button className={classes.nav__togglebutton}></button>
+          <button className={classes.nav__togglethemebutton}></button>
         </nav>
         <TodoInput onAddTodo={addTodoHandler}/>
       </header>

@@ -19,7 +19,7 @@
   font-weight: 700;
 }
 
-.nav__togglebutton{
+.nav__togglethemebutton{
   border: none;
   background-color: transparent;
   background-image: url("./assets/sun-regular.svg");
