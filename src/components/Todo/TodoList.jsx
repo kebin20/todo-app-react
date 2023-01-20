@@ -11,7 +11,7 @@ function TodoList(props) {
         </TodoItem>
       ))}
       <div className={classes.itemdisplay}>
-        <p>5 items left</p>
+        <p className={classes.itemsleft}>5 items left</p>
         <button>Clear Completed</button>
       </div>
     </ul>
