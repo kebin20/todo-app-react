@@ -10,6 +10,10 @@ function TodoList(props) {
           {item.text}
         </TodoItem>
       ))}
+      <div className={classes.itemdisplay}>
+        <p>5 items left</p>
+        <button>Clear Completed</button>
+      </div>
     </ul>
   );
 }

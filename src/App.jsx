@@ -35,10 +35,6 @@ function App() {
       </header>
       <main>
         <TodoList items={todoItem} onDeleteItem={deleteTodoHandler} />
-        <div className={classes.itemdisplay}>
-          <p>5 items left</p>
-          <button>Clear Completed</button>
-        </div>
       </main>
     </React.Fragment>
   );
