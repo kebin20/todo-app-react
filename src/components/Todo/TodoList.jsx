@@ -6,7 +6,7 @@ function TodoList(props) {
   return (
     <ul className={classes.todolist}>
       {props.items.map((item) => (
-        <TodoItem key={item.id} id={item.id} onDelete={item.onDeleteItem}>
+        <TodoItem key={item.id} id={item.id} onDelete={props.onDeleteItem}>
           {item.text}
         </TodoItem>
       ))}

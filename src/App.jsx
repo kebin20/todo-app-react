@@ -5,8 +5,8 @@ import TodoList from './components/Todo/TodoList';
 
 function App() {
   const [todoItem, setTodoItem] = useState([
-    { text: 'Complete online Javascript course', id: '1' },
-    { text: 'Jog around the park 3x', id: '2' },
+    { text: 'Complete online Javascript course', id: 'i1' },
+    { text: 'Jog around the park 3x', id: 'i2' },
   ]);
 
   function addTodoHandler(enteredText) {
@@ -19,7 +19,7 @@ function App() {
 
   function deleteTodoHandler(itemId) {
     setTodoItem(prevTodoItem => {
-      const updatedTodo = prevTodoItem.filter(item.id !== itemId)
+      const updatedTodo = prevTodoItem.filter(item => item.id !== itemId)
       return updatedTodo;
     })
   }
@@ -34,7 +34,7 @@ function App() {
         <TodoInput onAddTodo={addTodoHandler}/>
       </header>
       <section>
-        <TodoList items={todoItem} onDelete={deleteTodoHandler}/>
+        <TodoList items={todoItem} onDeleteItem={deleteTodoHandler}/>
       </section>
     </React.Fragment>
   );

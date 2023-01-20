@@ -5,7 +5,7 @@ import DeleteButton from './../UI/Buttons/DeleteButton';
 
 function TodoItem(props) {
   function deleteHandler() {
-    props.onDelete(id);
+    props.onDelete(props.id);
   }
 
   return (
