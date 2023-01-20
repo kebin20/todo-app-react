@@ -2,6 +2,16 @@
   display: flex;
   color: hsl(234, 39%, 85%);
   background-color: hsl(233, 14%, 35%);
-  border-radius: 6px;
   padding: 1em;
+  border-top: 1px solid grey;
+}
+
+li:first-child {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+li:last-child {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }

@@ -18,10 +18,10 @@ function App() {
   }
 
   function deleteTodoHandler(itemId) {
-    setTodoItem(prevTodoItem => {
-      const updatedTodo = prevTodoItem.filter(item => item.id !== itemId)
+    setTodoItem((prevTodoItem) => {
+      const updatedTodo = prevTodoItem.filter((item) => item.id !== itemId);
       return updatedTodo;
-    })
+    });
   }
 
   return (
@@ -31,10 +31,14 @@ function App() {
           <h1 className={classes.nav__title}>Todo</h1>
           <button className={classes.nav__togglethemebutton}></button>
         </nav>
-        <TodoInput onAddTodo={addTodoHandler}/>
+        <TodoInput onAddTodo={addTodoHandler} />
       </header>
       <main>
-        <TodoList items={todoItem} onDeleteItem={deleteTodoHandler}/>
+        <TodoList items={todoItem} onDeleteItem={deleteTodoHandler} />
+        <div className={classes.itemdisplay}>
+          <p>5 items left</p>
+          <button>Clear Completed</button>
+        </div>
       </main>
     </React.Fragment>
   );
