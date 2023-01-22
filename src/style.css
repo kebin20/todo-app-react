@@ -86,11 +86,6 @@ button {
   color: hsl(234, 39%, 85%);
 }
 
-button:hover {
-  background-color: hsl(234, 39%, 85%);
-  color: hsl(207, 13%, 34%);
-}
-
 input {
   outline: none;
   color: hsl(234, 39%, 85%);

@@ -12,3 +12,8 @@
 .checkbutton:focus {
   outline: none;
 }
+
+.checkbutton:hover {
+  background-color: hsl(234, 39%, 85%);
+  color: hsl(207, 13%, 34%);
+}
