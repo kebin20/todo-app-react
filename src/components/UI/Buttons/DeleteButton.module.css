@@ -1,9 +1,10 @@
 .deletebutton {
   width: 1.5em;
   height: 1.5em;
-  border: 1px solid rgb(60, 77, 60);
-  background-color: none;
-  font: inherit;
-  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  background: url('./x-button.svg');
+  background-repeat: no-repeat;
+  opacity: 0.5;
   margin-left: auto;
 }

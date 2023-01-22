@@ -12,7 +12,7 @@ function TodoItem(props) {
     <li className={classes.todoitem}>
       <CheckButton/>
       {props.children}
-      <DeleteButton onClick={deleteHandler}/>
+      <DeleteButton onClick={deleteHandler}></DeleteButton>
     </li>
   );
 }

@@ -6,12 +6,4 @@
   margin: 1em;
 }
 
-.input {
-  color: hsl(234, 39%, 85%);
-  background-color: hsl(233, 14%, 35%);
-  border: none;
-}
 
-input::placeholder {
-  color: hsl(234, 39%, 85%);
-}

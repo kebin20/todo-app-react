@@ -12,7 +12,7 @@ function TodoList(props) {
       ))}
       <div className={classes.itemdisplay}>
         <p className={classes.itemsleft}>5 items left</p>
-        <button>Clear Completed</button>
+        <button className={classes.clearcompletedbtn}>Clear Completed</button>
       </div>
     </ul>
   );
