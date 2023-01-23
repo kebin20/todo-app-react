@@ -29,6 +29,7 @@ function App() {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = prevTodoItem.map((todo) => {
         if (todo.id === itemId) {
+          console.log('Before toggle: ', todo.isChecked);
           return {
             ...todo,
             isChecked: !todo.isChecked,
@@ -36,6 +37,10 @@ function App() {
         }
         return todo;
       });
+      console.log(
+        'After toggle: ',
+        updatedTodo.find((item) => item.id === itemId).isChecked
+      );
       return updatedTodo;
     });
   }
