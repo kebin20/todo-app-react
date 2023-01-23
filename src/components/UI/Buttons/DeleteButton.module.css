@@ -10,6 +10,6 @@
 }
 
 .deletebutton:hover {
-  background-color: hsl(234, 39%, 85%);
+  background-color: transparent;
   color: hsl(207, 13%, 34%);
 }
