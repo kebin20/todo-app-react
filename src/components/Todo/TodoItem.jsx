@@ -9,12 +9,13 @@ function TodoItem(props) {
   }
 
   return (
-    <li className={classes.todoitem}>
+    <li className={classes.todoitem} style={props.style}>
       <CheckButton
         onClick={() => {
           console.log('onCheckItem called');
           props.onCheckItem(props.id);
         }}
+        isChecked={props.isChecked}
       />
       {props.children}
       <DeleteButton onClick={deleteHandler}></DeleteButton>

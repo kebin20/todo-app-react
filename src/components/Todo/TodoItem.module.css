@@ -1,5 +1,6 @@
 .todoitem {
   display: flex;
+  /* text-decoration: line-through; */
   align-items: center;
   color: white;
   background-color: hsl(233, 14%, 35%);
