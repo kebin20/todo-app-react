@@ -2,13 +2,14 @@ header {
   /* background-image: url(./assets/bg-mobile-light.jpg); */
   background: linear-gradient(to right, hsl(235, 64%, 67%), hsl(280, 87%, 65%));
   padding: 1.5em;
+  padding-bottom: 4em;
 }
 
 .nav {
   display: flex;
   background: transparent;
   justify-content: space-between;
-  padding: 1em;
+  padding: 2em 0em;
 }
 
 .nav__title {
