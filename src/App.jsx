@@ -7,6 +7,7 @@ function App() {
   const [todoItem, setTodoItem] = useState([
     { text: 'Complete online Javascript course', id: 'i1' },
     { text: 'Jog around the park 3x', id: 'i2' },
+    { text: '10 minutes meditation', id: 'i3' },
   ]);
 
   function addTodoHandler(enteredText) {
