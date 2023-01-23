@@ -10,7 +10,11 @@ function TodoItem(props) {
 
   return (
     <li className={classes.todoitem}>
-      <CheckButton/>
+      <CheckButton
+        onClick={() => {
+          props.onCheckItemId(item.id);
+        }}
+      />
       {props.children}
       <DeleteButton onClick={deleteHandler}></DeleteButton>
     </li>

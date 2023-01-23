@@ -5,9 +5,9 @@ import TodoList from './components/Todo/TodoList';
 
 function App() {
   const [todoItem, setTodoItem] = useState([
-    { text: 'Complete online Javascript course', id: 'i1' },
-    { text: 'Jog around the park 3x', id: 'i2' },
-    { text: '10 minutes meditation', id: 'i3' },
+    { text: 'Complete online Javascript course', id: '1', isChecked: false },
+    { text: 'Jog around the park 3x', id: '2', isChecked: false },
+    { text: '10 minutes meditation', id: '3', isChecked: false },
   ]);
 
   function addTodoHandler(enteredText) {
@@ -25,6 +25,21 @@ function App() {
     });
   }
 
+  function checkItem(itemId) {
+    setTodoItem((prevTodoItem) => {
+      const updatedTodo = prevTodoItem.map((todo) => {
+        if (todo.id === itemId) {
+          return {
+            ...todo,
+            isChecked: !todo.isChecked,
+          };
+        }
+        return todo;
+      });
+      return updatedTodo;
+    });
+  }
+
   return (
     <React.Fragment>
       <header className={classes.header}>
@@ -35,7 +50,11 @@ function App() {
         <TodoInput onAddTodo={addTodoHandler} />
       </header>
       <main>
-        <TodoList items={todoItem} onDeleteItem={deleteTodoHandler} />
+        <TodoList
+          items={todoItem}
+          onCheckItem={(id) => checkItem(id)}
+          onDeleteItem={deleteTodoHandler}
+        />
       </main>
     </React.Fragment>
   );
