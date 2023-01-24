@@ -16,6 +16,6 @@
 }
 
 .clearcompletedbtn:hover {
-  color: white;
+  color: hsl(220, 98%, 61%);
   background-color: transparent;
 }
