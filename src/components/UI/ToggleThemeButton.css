@@ -1,0 +1,8 @@
+.toggle-theme-button {
+  border: none;
+  background-color: transparent;
+  background-image: url('./assets/sun-regular.svg');
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 2em;
+}

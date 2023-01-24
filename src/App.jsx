@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import classes from './App.module.css';
 import TodoInput from './components/Todo/TodoInput';
 import TodoList from './components/Todo/TodoList';
 import TodoOptionBar from './components/Todo/TodoOptionBar';
+import ToggleThemeButton from './components/UI/Buttons/ToggleThemeButton';
 
 function App() {
   const [todoItem, setTodoItem] = useState([
@@ -13,8 +14,6 @@ function App() {
     { text: 'Pick up groceries', id: '5', isChecked: false },
     { text: 'Complete Todo App on Frontend Mentor', id: '6', isChecked: false },
   ]);
-
-  console.log(todoItem);
 
   function addTodoHandler(enteredText) {
     setTodoItem((prevTodoItem) => {
@@ -81,9 +80,8 @@ function App() {
         <div className={classes.navwrapper}>
           <nav className={classes.nav}>
             <h1 className={classes.nav__title}>Todo</h1>
-            <button className={classes.nav__togglethemebutton}></button>
+            <ToggleThemeButton />
           </nav>
-
           <TodoInput onAddTodo={addTodoHandler} />
         </div>
       </header>

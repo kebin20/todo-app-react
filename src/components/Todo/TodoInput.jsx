@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
-import classes from './TodoInput.module.css';
+import React, { useState, useContext } from 'react';
+import './TodoInput.css';
 import CheckButton from './../UI/Buttons/CheckButton';
+import { ThemeContext } from '../../themeContext';
 
 function TodoInput(props) {
   const [enteredValue, setEnteredValue] = useState('Create a new todo...');
+
+  const { darkTheme } = useContext(ThemeContext);
 
   function todoInputChangeHandler(e) {
     setEnteredValue(e.target.value);
@@ -16,10 +19,9 @@ function TodoInput(props) {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={classes.form}>
+      <div className={`${darkTheme}-theme form`}>
         <CheckButton type="submit">+</CheckButton>
         <input
-          className={classes.input}
           placeholder="Create a new todo..."
           type="text"
           onChange={todoInputChangeHandler}

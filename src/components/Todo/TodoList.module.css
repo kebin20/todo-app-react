@@ -1,16 +1,21 @@
+.todolist {
+  background-color: hsl(233, 14%, 35%);
+  color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
 .itemdisplay {
   display: flex;
   justify-content: space-between;
   color: hsl(234, 39%, 85%);
-  background-color: hsl(233, 14%, 35%);
   padding: 1.2em 1em;
   border-top: 1px solid hsl(234, 39%, 85%);
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
 }
 
 .clearcompletedbtn {
-  color: hsl(234, 39%, 85%);
   background-color: hsl(233, 14%, 35%);
   border: none;
 }
