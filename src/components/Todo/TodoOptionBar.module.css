@@ -15,6 +15,6 @@
 }
 
 .optionbutton:hover {
-  color: lightblue;
+  color: hsl(220, 98%, 61%);
   background-color: transparent;
 }
