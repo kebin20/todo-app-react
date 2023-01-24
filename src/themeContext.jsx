@@ -2,24 +2,20 @@ import React, { useState } from 'react';
 const ThemeContext = React.createContext();
 
 function ThemeContextProvider(props) {
-  const [bgDarkTheme, setBgDarkTheme] = useState('bg-dark');
-  const [darkTheme, setDarkTheme] = useState('dark');
+  const [bgTheme, setBgTheme] = useState('bg-dark');
+  const [theme, setTheme] = useState('dark');
 
   function toggleBgTheme() {
-    setBgDarkTheme((prevTheme) =>
-      prevTheme === 'light' ? 'bg-dark' : 'light'
-    );
+    setBgTheme((prevTheme) => (prevTheme === 'light' ? 'bg-dark' : 'light'));
   }
 
   function toggleTheme() {
-    setDarkTheme((prevTheme) =>
-      prevTheme === 'light' ? 'dark' : 'light'
-    );
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   }
 
   return (
     <ThemeContext.Provider
-      value={{ bgDarkTheme, darkTheme, toggleBgTheme, toggleTheme }}
+      value={{ bgTheme, theme, toggleBgTheme, toggleTheme }}
     >
       {props.children}
     </ThemeContext.Provider>
