@@ -5,6 +5,10 @@ header {
   padding-bottom: 4em;
 }
 
+main {
+  padding: 1.5em;
+}
+
 .nav {
   display: flex;
   background: transparent;

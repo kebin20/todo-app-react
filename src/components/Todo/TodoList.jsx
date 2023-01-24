@@ -3,7 +3,6 @@ import classes from './TodoList.module.css';
 import TodoItem from './TodoItem';
 
 function TodoList(props) {
-
   return (
     <ul className={classes.todolist}>
       {props.items.map((item) => (
@@ -19,8 +18,13 @@ function TodoList(props) {
         </TodoItem>
       ))}
       <div className={classes.itemdisplay}>
-        <p className={classes.itemsleft}>5 items left</p>
-        <button className={classes.clearcompletedbtn}>Clear Completed</button>
+        <p className={classes.itemsleft}>{props.items.length} items left</p>
+        <button
+          className={classes.clearcompletedbtn}
+          onClick={props.onClearCompleted}
+        >
+          Clear Completed
+        </button>
       </div>
     </ul>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classes from './App.module.css';
 import TodoInput from './components/Todo/TodoInput';
 import TodoList from './components/Todo/TodoList';
+import TodoOptionBar from './components/Todo/TodoOptionBar';
 
 function App() {
   const [todoItem, setTodoItem] = useState([
@@ -12,6 +13,8 @@ function App() {
     { text: 'Pick up groceries', id: '5', isChecked: false },
     { text: 'Complete Todo App on Frontend Mentor', id: '6', isChecked: false },
   ]);
+
+  console.log(todoItem);
 
   function addTodoHandler(enteredText) {
     setTodoItem((prevTodoItem) => {
@@ -32,7 +35,6 @@ function App() {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = prevTodoItem.map((todo) => {
         if (todo.id === itemId) {
-          console.log('Before toggle: ', todo.isChecked);
           return {
             ...todo,
             isChecked: !todo.isChecked,
@@ -48,6 +50,31 @@ function App() {
     });
   }
 
+  function clearCompletedItems() {
+    setTodoItem((prevTodoItem) => {
+      const updatedTodo = prevTodoItem.filter((item) => !item.isChecked);
+      return updatedTodo;
+    });
+  }
+
+  // function showCompletedItems() {
+  //   setTodoItem((prevTodoItem) => {
+  //     const updatedTodo = prevTodoItem.filter((item) => item.isChecked);
+  //     setTodoItem(updatedTodo)
+  //   });
+  // }
+
+  // function showActiveItems() {
+  //   setTodoItem((prevTodoItem) => {
+  //     const updatedTodo = prevTodoItem.filter((item) => !item.isChecked);
+  //     setTodoItem(updatedTodo)
+  //   });
+  // }
+
+  // function showAllItems() {
+  //   return todoItem
+  // }
+
   return (
     <React.Fragment>
       <header className={classes.header}>
@@ -62,7 +89,9 @@ function App() {
           items={todoItem}
           onCheckItem={(id) => checkItem(id)}
           onDeleteItem={deleteTodoHandler}
+          onClearCompleted={clearCompletedItems}
         />
+        <TodoOptionBar />
       </main>
     </React.Fragment>
   );

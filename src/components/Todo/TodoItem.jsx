@@ -12,7 +12,6 @@ function TodoItem(props) {
     <li className={classes.todoitem} style={props.style}>
       <CheckButton
         onClick={() => {
-          console.log('onCheckItem called');
           props.onCheckItem(props.id);
         }}
         isChecked={props.isChecked}

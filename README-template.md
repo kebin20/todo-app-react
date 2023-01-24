@@ -118,3 +118,5 @@ This is where you can give a hat tip to anyone who helped you out on this projec
 **Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
 
 https://stackoverflow.com/questions/52950627/inline-style-in-react-background-linear-gradient
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
