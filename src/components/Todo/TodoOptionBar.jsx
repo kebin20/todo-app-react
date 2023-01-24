@@ -1,12 +1,22 @@
 import React from 'react';
 import classes from './TodoOptionBar.module.css';
 
-function TodoOptionBar(props) {
+function TodoOptionBar({
+  onShowCompletedItems,
+  onShowActiveItems,
+  onShowAllItems,
+}) {
   return (
     <div className={classes.optionbar}>
-      <button className={classes.optionbutton}>All</button>
-      <button className={classes.optionbutton}>Active</button>
-      <button className={classes.optionbutton}>Completed</button>
+      <button className={classes.optionbutton} onClick={onShowAllItems}>
+        All
+      </button>
+      <button className={classes.optionbutton} onClick={onShowActiveItems}>
+        Active
+      </button>
+      <button className={classes.optionbutton} onClick={onShowCompletedItems}>
+        Completed
+      </button>
     </div>
   );
 }

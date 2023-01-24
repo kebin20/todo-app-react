@@ -60,19 +60,19 @@ function App() {
   // function showCompletedItems() {
   //   setTodoItem((prevTodoItem) => {
   //     const updatedTodo = prevTodoItem.filter((item) => item.isChecked);
-  //     setTodoItem(updatedTodo)
+  //     setTodoItem(updatedTodo);
   //   });
   // }
 
   // function showActiveItems() {
   //   setTodoItem((prevTodoItem) => {
   //     const updatedTodo = prevTodoItem.filter((item) => !item.isChecked);
-  //     setTodoItem(updatedTodo)
+  //     setTodoItem(updatedTodo);
   //   });
   // }
 
   // function showAllItems() {
-  //   return todoItem
+  //   return todoItem;
   // }
 
   return (
@@ -91,7 +91,11 @@ function App() {
           onDeleteItem={deleteTodoHandler}
           onClearCompleted={clearCompletedItems}
         />
-        <TodoOptionBar />
+        <TodoOptionBar
+          // onShowCompletedItems={showCompletedItems}
+          // onShowActiveItems={showActiveItems}
+          // onShowAllItems={showAllItems}
+        />
       </main>
     </React.Fragment>
   );
