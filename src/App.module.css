@@ -43,3 +43,7 @@ main {
   width: 2em;
   height: 2em;
 }
+
+.dark-mode {
+  background-color: black;
+}
