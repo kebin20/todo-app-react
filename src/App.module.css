@@ -9,10 +9,15 @@ main {
   padding: 1.5em;
   position: absolute;
   top: 23%;
-  top: 23%;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.navwrapper,
+.mainwrapper {
+  max-width: 600px;
+  margin: auto;
 }
 
 .nav {

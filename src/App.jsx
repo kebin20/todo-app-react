@@ -78,24 +78,29 @@ function App() {
   return (
     <React.Fragment>
       <header className={classes.header}>
-        <nav className={classes.nav}>
-          <h1 className={classes.nav__title}>Todo</h1>
-          <button className={classes.nav__togglethemebutton}></button>
-        </nav>
-        <TodoInput onAddTodo={addTodoHandler} />
+        <div className={classes.navwrapper}>
+          <nav className={classes.nav}>
+            <h1 className={classes.nav__title}>Todo</h1>
+            <button className={classes.nav__togglethemebutton}></button>
+          </nav>
+
+          <TodoInput onAddTodo={addTodoHandler} />
+        </div>
       </header>
       <main>
-        <TodoList
-          items={todoItem}
-          onCheckItem={(id) => checkItem(id)}
-          onDeleteItem={deleteTodoHandler}
-          onClearCompleted={clearCompletedItems}
-        />
-        <TodoOptionBar
+        <div className={classes.mainwrapper}>
+          <TodoList
+            items={todoItem}
+            onCheckItem={(id) => checkItem(id)}
+            onDeleteItem={deleteTodoHandler}
+            onClearCompleted={clearCompletedItems}
+          />
+          <TodoOptionBar
           // onShowCompletedItems={showCompletedItems}
           // onShowActiveItems={showActiveItems}
           // onShowAllItems={showAllItems}
-        />
+          />
+        </div>
       </main>
     </React.Fragment>
   );
