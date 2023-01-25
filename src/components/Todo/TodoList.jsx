@@ -1,10 +1,14 @@
-import React from 'react';
-import classes from './TodoList.module.css';
-import TodoItem from './TodoItem';
+/* eslint-disable react/prop-types */
+import React, { useContext } from "react";
+import "./TodoList.css";
+import { ThemeContext } from "../../themeContext";
+import TodoItem from "./TodoItem";
 
 function TodoList(props) {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <ul className={classes.todolist}>
+    <ul className={`${theme} todo-list`}>
       {props.items.map((item) => (
         <TodoItem
           key={item.id}
@@ -12,15 +16,15 @@ function TodoList(props) {
           onCheckItem={props.onCheckItem}
           id={item.id}
           onDelete={props.onDeleteItem}
-          style={{ textDecoration: item.isChecked ? 'line-through' : 'none' }}
+          style={{ textDecoration: item.isChecked ? "line-through" : "none" }}
         >
           {item.text}
         </TodoItem>
       ))}
-      <div className={classes.itemdisplay}>
-        <p className={classes.itemsleft}>{props.items.length} items left</p>
+      <div className="item-display">
+        <p className="items-left">{props.items.length} items left</p>
         <button
-          className={classes.clearcompletedbtn}
+          className={`${theme} clear-completed-btn`}
           onClick={props.onClearCompleted}
         >
           Clear Completed

@@ -1,5 +1,6 @@
 header {
-  /* background-image: url(./assets/bg-mobile-light.jpg); */
+  background-repeat: none;
+  background-size: cover;
   background: linear-gradient(to right, hsl(235, 64%, 67%), hsl(280, 87%, 65%));
   padding: 1.5em;
   padding-bottom: 4em;
@@ -35,6 +36,14 @@ main {
   font-weight: 700;
 }
 
-.dark-mode {
-  background-color: black;
+.header-dark-img {
+  background-image: url(./assets/bg-desktop-dark.jpg);
+}
+
+.header-light-img {
+  background-image: url(./assets/bg-desktop-light.jpg);
+}
+
+.bg-dark {
+  background-color: hsl(235, 24%, 19%);
 }

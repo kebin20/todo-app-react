@@ -1,15 +1,5 @@
 .form {
   display: flex;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 1em;
-}
-
-.light-theme {
-  background-color: hsl(0, 0%, 98%);
-  color: hsl(235, 19%, 35%);
-}
-
-.dark-theme {
-  background-color: hsl(233, 14%, 35%);
-  color: white;
 }

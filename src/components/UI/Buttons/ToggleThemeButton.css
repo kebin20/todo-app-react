@@ -1,8 +1,15 @@
 .toggle-theme-button {
   border: none;
   background-color: transparent;
-  background-image: url('./sun-regular.svg');
   background-repeat: no-repeat;
   width: 2em;
   height: 2em;
+}
+
+.switch-to-dark-icon {
+  background-image: url("./assets/icon-sun.svg");
+}
+
+.switch-to-light-icon {
+  background-image: url("./assets/icon-moon.svg");
 }

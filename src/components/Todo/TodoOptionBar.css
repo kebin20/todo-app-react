@@ -1,0 +1,16 @@
+.option-bar {
+  padding: 1.2em 1em;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 8px;
+  margin-top: 1.5em;
+}
+
+.option-button {
+  border: none;
+}
+
+.option-button:hover {
+  color: hsl(220, 98%, 61%);
+  background-color: transparent;
+}

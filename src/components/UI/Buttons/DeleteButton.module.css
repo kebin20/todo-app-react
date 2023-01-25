@@ -3,7 +3,7 @@
   height: 1.5em;
   border: none;
   background-color: transparent;
-  background: url('./x-button.svg');
+  background: url("./assets/icon-cross.svg");
   background-repeat: no-repeat;
   opacity: 0.5;
   margin-left: auto;

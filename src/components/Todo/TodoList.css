@@ -1,0 +1,22 @@
+.todo-list {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.item-display {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2em 1em;
+  border-top: 1px solid hsl(234, 39%, 85%);
+}
+
+.clear-completed-btn {
+  border: none;
+}
+
+.clear-completed-btn:hover {
+  color: hsl(220, 98%, 61%);
+  background-color: transparent;
+}

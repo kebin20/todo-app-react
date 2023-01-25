@@ -1,20 +1,26 @@
-import React from 'react';
-import classes from './TodoOptionBar.module.css';
+/* eslint-disable react/prop-types */
+import React, { useContext } from "react";
+import "./TodoOptionBar.css";
+import { ThemeContext } from "../../themeContext";
 
 function TodoOptionBar({
   onShowCompletedItems,
   onShowActiveItems,
   onShowAllItems,
 }) {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className={classes.optionbar}>
-      <button className={classes.optionbutton} onClick={onShowAllItems}>
+    <div className={`${theme} option-bar`}>
+      <button className={`${theme} option-button`} onClick={onShowAllItems}>
         All
       </button>
-      <button className={classes.optionbutton} onClick={onShowActiveItems}>
+      <button className={`${theme} option-button`} onClick={onShowActiveItems}>
         Active
       </button>
-      <button className={classes.optionbutton} onClick={onShowCompletedItems}>
+      <button
+        className={`${theme} option-button`}
+        onClick={onShowCompletedItems}
+      >
         Completed
       </button>
     </div>

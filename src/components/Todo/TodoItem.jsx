@@ -1,7 +1,9 @@
-import React from 'react';
-import classes from './TodoItem.module.css';
-import CheckButton from './../UI/Buttons/CheckButton';
-import DeleteButton from './../UI/Buttons/DeleteButton';
+/* eslint-disable react/prop-types */
+import React from "react";
+import "./TodoItem.css";
+import CheckButton from "./../UI/Buttons/CheckButton";
+import DeleteButton from "./../UI/Buttons/DeleteButton";
+
 
 function TodoItem(props) {
   function deleteHandler() {
@@ -9,7 +11,7 @@ function TodoItem(props) {
   }
 
   return (
-    <li className={classes.todoitem} style={props.style}>
+    <li className="todo-item" style={props.style}>
       <CheckButton
         onClick={() => {
           props.onCheckItem(props.id);
