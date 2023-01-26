@@ -67,19 +67,21 @@ function App() {
     });
   }
 
-  // function showCompletedItems() {
-  //   setTodoItem((prevTodoItem) => {
-  //     const updatedTodo = prevTodoItem.filter((item) => item.isChecked);
-  //     setTodoItem(updatedTodo);
-  //   });
-  // }
+  function showCompletedItems() {
+    setTodoItem((prevTodoItem) => {
+      const updatedCompletedTodo = prevTodoItem.filter(
+        (item) => item.isChecked
+      );
+      return updatedCompletedTodo;
+    });
+  }
 
-  // function showActiveItems() {
-  //   setTodoItem((prevTodoItem) => {
-  //     const updatedTodo = prevTodoItem.filter((item) => !item.isChecked);
-  //     setTodoItem(updatedTodo);
-  //   });
-  // }
+  function showActiveItems() {
+    setTodoItem((prevTodoItem) => {
+      const updatedActiveTodo = prevTodoItem.filter((item) => !item.isChecked);
+      return updatedActiveTodo;
+    });
+  }
 
   // function showAllItems() {
   //   return todoItem;
@@ -105,9 +107,9 @@ function App() {
             onClearCompleted={clearCompletedItems}
           />
           <TodoOptionBar
-          // onShowCompletedItems={showCompletedItems}
-          // onShowActiveItems={showActiveItems}
-          // onShowAllItems={showAllItems}
+            onShowCompletedItems={showCompletedItems}
+            onShowActiveItems={showActiveItems}
+            // onShowAllItems={showAllItems}
           />
         </div>
       </main>
