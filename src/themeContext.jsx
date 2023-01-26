@@ -1,23 +1,16 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState } from "react";
 const ThemeContext = React.createContext();
 
 function ThemeContextProvider(props) {
-  const [bgTheme, setBgTheme] = useState('bg-dark');
-  const [theme, setTheme] = useState('dark');
-
-  function toggleBgTheme() {
-    setBgTheme((prevBgTheme) => (prevBgTheme === 'light' ? 'bg-dark' : 'light'));
-  }
+  const [theme, setTheme] = useState("dark");
 
   function toggleTheme() {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   }
 
   return (
-    <ThemeContext.Provider
-      value={{ bgTheme, theme, toggleBgTheme, toggleTheme }}
-    >
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {props.children}
     </ThemeContext.Provider>
   );

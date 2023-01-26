@@ -24,7 +24,8 @@ function TodoList(props) {
       <div className="item-display">
         <p className="items-left">{props.items.length} items left</p>
         <button
-          className={`${theme} clear-completed-btn`}
+          className={`clear-completed-btn ${theme}`}
+          id="no-border"
           onClick={props.onClearCompleted}
         >
           Clear Completed

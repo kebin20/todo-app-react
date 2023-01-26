@@ -120,3 +120,5 @@ This is where you can give a hat tip to anyone who helped you out on this projec
 https://stackoverflow.com/questions/52950627/inline-style-in-react-background-linear-gradient
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+https://bobbyhadz.com/blog/react-set-body-style

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "./themeContext";
 import classes from "./App.module.css";
 import TodoInput from "./components/Todo/TodoInput";
 import TodoList from "./components/Todo/TodoList";
@@ -14,6 +15,13 @@ function App() {
     { text: "Pick up groceries", id: "5", isChecked: false },
     { text: "Complete Todo App on Frontend Mentor", id: "6", isChecked: false },
   ]);
+
+  const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    document.body.style.backgroundColor =
+      theme === "light" ? "white" : "hsl(235, 24%, 19%)";
+  }, [theme]);
 
   function addTodoHandler(enteredText) {
     setTodoItem((prevTodoItem) => {

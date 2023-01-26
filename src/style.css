@@ -67,7 +67,6 @@ The designs were created to the following widths:
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: hsl(235, 24%, 19%);
 }
 
 /* responsive images/videos */
@@ -84,6 +83,7 @@ button {
   cursor: pointer;
   font-family: "Josefin Sans", sans-serif;
   color: hsl(234, 39%, 85%);
+  border: none;
 }
 
 input {
@@ -97,17 +97,17 @@ input::placeholder {
 }
 
 /*Theme Toggle*/
+#no-border {
+  border: none;
+}
+
 .dark {
   background-color: hsl(233, 14%, 35%);
   color: hsl(234, 39%, 85%);
 }
 
-.bg-dark {
-  background-color: hsl(235, 24%, 19%);
-}
-
 .light {
-  background-color: white;
+  background-color: hsl(0, 0%, 98%);
   color: hsl(235, 24%, 19%);
+  border: 1px solid hsl(234, 39%, 85%);
 }
-

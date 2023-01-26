@@ -20,10 +20,11 @@ function TodoInput(props) {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={`${theme} form`}>
+      <div className={`${theme} form-container`}>
         <CheckButton type="submit">+</CheckButton>
         <input
           className={theme}
+          id="no-border"
           placeholder="Create a new todo..."
           type="text"
           onChange={todoInputChangeHandler}

@@ -9,7 +9,7 @@ header {
 main {
   padding: 1.5em;
   position: absolute;
-  top: 23%;
+  top: 20%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -44,6 +44,6 @@ main {
   background-image: url(./assets/bg-desktop-light.jpg);
 }
 
-.bg-dark {
+/* .bg-dark {
   background-color: hsl(235, 24%, 19%);
-}
+} */
