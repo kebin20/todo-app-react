@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "./themeContext";
-import classes from "./App.module.css";
+// import classes from "./App.module.css";
+
+/* components */
 import TodoInput from "./components/Todo/TodoInput";
 import TodoList from "./components/Todo/TodoList";
 import TodoOptionBar from "./components/Todo/TodoOptionBar";
 import ToggleThemeButton from "./components/UI/Buttons/ToggleThemeButton";
+
+import "./App.css";
 
 function App() {
   const [todoItem, setTodoItem] = useState([
@@ -84,17 +88,22 @@ function App() {
 
   return (
     <React.Fragment>
-      <header className={classes.header}>
+      <header className={`header-${theme}-img`}>
+        <div className="nav-wrapper">
+          <nav className="nav">
+            <h1 className="nav__title">Todo</h1>
+            {/* <header className={classes.header}>
         <div className={classes.navwrapper}>
           <nav className={classes.nav}>
-            <h1 className={classes.nav__title}>Todo</h1>
+            <h1 className={classes.nav__title}>Todo</h1> */}
             <ToggleThemeButton />
           </nav>
           <TodoInput onAddTodo={addTodoHandler} />
         </div>
       </header>
       <main>
-        <div className={classes.mainwrapper}>
+        {/* <div className={classes.mainwrapper}> */}
+        <div className="main-wrapper">
           <TodoList
             items={todoItem}
             onCheckItem={(id) => checkItem(id)}

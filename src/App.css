@@ -1,0 +1,49 @@
+header {
+  background-repeat: none;
+  background-size: cover;
+  background: linear-gradient(to right, hsl(235, 64%, 67%), hsl(280, 87%, 65%));
+  padding: 1.5em;
+  padding-bottom: 4em;
+}
+
+main {
+  padding: 1.5em;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.nav-wrapper,
+.main-wrapper {
+  max-width: 550px;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  background: transparent;
+  justify-content: space-between;
+  padding: 2em 0em;
+}
+
+.nav__title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-dark-img {
+  background-image: url(./assets/bg-desktop-dark.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-light-img {
+  background-image: url(./assets/bg-desktop-light.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
