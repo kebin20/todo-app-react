@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "./themeContext";
-// import classes from "./App.module.css";
 
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
@@ -92,17 +91,12 @@ function App() {
         <div className="nav-wrapper">
           <nav className="nav">
             <h1 className="nav__title">Todo</h1>
-            {/* <header className={classes.header}>
-        <div className={classes.navwrapper}>
-          <nav className={classes.nav}>
-            <h1 className={classes.nav__title}>Todo</h1> */}
             <ToggleThemeButton />
           </nav>
           <TodoInput onAddTodo={addTodoHandler} />
         </div>
       </header>
       <main>
-        {/* <div className={classes.mainwrapper}> */}
         <div className="main-wrapper">
           <TodoList
             items={todoItem}
