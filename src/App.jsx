@@ -4,7 +4,6 @@ import { ThemeContext } from "./themeContext";
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
 import TodoList from "./components/Todo/TodoList";
-import TodoCompletedList from "./components/Todo/TodoCompletedList";
 import TodoOptionBar from "./components/Todo/TodoOptionBar";
 import ToggleThemeButton from "./components/UI/Buttons/ToggleThemeButton";
 
@@ -19,11 +18,7 @@ function App() {
     { text: "Pick up groceries", id: "5", isChecked: false },
     { text: "Complete Todo App on Frontend Mentor", id: "6", isChecked: false },
   ]);
-
-  // const [isCompletedOn, setIsCompletedOn] = useState(false);
-  // const [isAllOn, setIsAllOn] = useState(false);
-  const [filteredCompletedItems, setFilteredCompletedItems] =
-    useState(todoItem);
+  const [visibility, setVisibility] = useState("all");
 
   const { theme } = useContext(ThemeContext);
 
@@ -73,24 +68,17 @@ function App() {
     });
   }
 
-  function showCompletedItems() {
-    setFilteredCompletedItems((prevItem) => {
-      const updatedCompletedTodo = prevItem.filter((item) => item.isChecked);
-      return updatedCompletedTodo;
-    });
-    // setIsCompletedOn((prevCompleted) => !prevCompleted);
+  function showAllItems() {
+    setVisibility("all");
   }
 
-  // function showActiveItems() {
-  //   setTodoItem((prevTodoItem) => {
-  //     const updatedActiveTodo = prevTodoItem.filter((item) => !item.isChecked);
-  //     return updatedActiveTodo;
-  //   });
-  // }
+  function showActiveItems() {
+    setVisibility("active");
+  }
 
-  // function showAllItems() {
-  //   setIsAllOn((prevOn) => !prevOn);
-  // }
+  function showCompletedItems() {
+    setVisibility("completed");
+  }
 
   return (
     <React.Fragment>
@@ -106,22 +94,20 @@ function App() {
       <main>
         <div className="main-wrapper">
           <TodoList
-            items={todoItem}
-            onCheckItem={(id) => checkItem(id)}
-            onDeleteItem={deleteTodoHandler}
-            onClearCompleted={clearCompletedItems}
-          />
-          <TodoCompletedList
-            filteredCompletedItems={filteredCompletedItems}
-            // isCompletedOn={isCompletedOn}
+            items={todoItem.filter(
+              (item) =>
+                visibility === "all" ||
+                (visibility === "active" && !item.isChecked) ||
+                (visibility === "completed" && item.isChecked)
+            )}
             onCheckItem={(id) => checkItem(id)}
             onDeleteItem={deleteTodoHandler}
             onClearCompleted={clearCompletedItems}
           />
           <TodoOptionBar
+            onShowAllItems={showAllItems}
+            onShowActiveItems={showActiveItems}
             onShowCompletedItems={showCompletedItems}
-            // onShowActiveItems={showActiveItems}
-            // onShowAllItems={showAllItems}
           />
         </div>
       </main>
