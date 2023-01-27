@@ -21,6 +21,9 @@ function TodoList(props) {
           {item.text}
         </TodoItem>
       ))}
+
+      
+
       <div className="item-display">
         <p className="items-left">{props.items.length} items left</p>
         <button
