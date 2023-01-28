@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     document.body.style.backgroundColor =
-      theme === "light" ? "white" : "hsl(235, 24%, 19%)";
+      theme === "light" ? "white" : "hsl(235, 21%, 11%)";
   }, [theme]);
 
   function addTodoHandler(enteredText) {

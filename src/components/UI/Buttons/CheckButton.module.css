@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid hsl(234, 39%, 85%);
+  border: 1px solid hsl(237, 14%, 26%);
   background: transparent;
   border-radius: 50em;
   margin-right: 1em;
@@ -18,6 +18,6 @@
 }
 
 .checkbutton:hover {
-  background-color: hsl(234, 39%, 85%);
+  background-color: hsl(233, 14%, 35%);
   color: hsl(207, 13%, 34%);
 }
