@@ -47,3 +47,21 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@media only screen and (min-width: 380px) {
+  main {
+    top: 24%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  main {
+    top: 18%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main {
+    top: 22%;
+  }
+}
