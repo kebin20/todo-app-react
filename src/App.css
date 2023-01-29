@@ -48,20 +48,27 @@ main {
   background-repeat: no-repeat;
 }
 
-@media only screen and (min-width: 380px) {
+@media only screen and (max-width: 375px) {
   main {
-    top: 24%;
+    top: 32%;
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 380px) {
   main {
-    top: 27%;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1080px) {
+  main {
+    top: 25%;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   main {
-    top: 22%;
+    top: 32%;
   }
 }
+
