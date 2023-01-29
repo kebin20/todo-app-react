@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-evenly;
   border-radius: 8px;
-  margin-top: 1.5em;
-  -webkit-box-shadow: -1px 14px 33px -7px rgba(0,0,0,0.47);
--moz-box-shadow: -1px 14px 33px -7px rgba(0,0,0,0.47);
-box-shadow: -1px 14px 33px -7px rgba(0,0,0,0.47);
+  margin-top: 1em;
+  -webkit-box-shadow: -1px 14px 33px -7px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: -1px 14px 33px -7px rgba(0, 0, 0, 0.47);
+  box-shadow: -1px 14px 33px -7px rgba(0, 0, 0, 0.47);
 }
 
 .option-button {

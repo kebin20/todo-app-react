@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 import { ThemeContext } from "../../../themeContext";
 
-import classes from "./CheckButton.module.css";
+import "./CheckButton.css";
 import tickButtonDarkMode from "./assets/icon-check-darkmode.svg";
 import tickButtonLightMode from "./assets/icon-check-lightmode.svg";
 
@@ -21,7 +21,7 @@ function CheckButton(props) {
   return (
     <button
       type={props.type}
-      className={classes.checkbutton}
+      className={`${theme} check-button`}
       onClick={props.onClick}
       style={tickStyle}
     >
