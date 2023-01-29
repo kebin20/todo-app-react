@@ -53,10 +53,6 @@ function App() {
         }
         return todo;
       });
-      console.log(
-        "After toggle: ",
-        updatedTodo.find((item) => item.id === itemId).isChecked
-      );
       return updatedTodo;
     });
   }
