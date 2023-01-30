@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ThemeContext } from "./themeContext";
+import React, { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from './themeContext';
 
 /* components */
-import TodoInput from "./components/Todo/TodoInput";
-import TodoList from "./components/Todo/TodoList";
-import TodoOptionBar from "./components/Todo/TodoOptionBar";
-import ToggleThemeButton from "./components/UI/Buttons/ToggleThemeButton";
+import TodoInput from './components/Todo/TodoInput';
+import TodoList from './components/Todo/TodoList';
+import TodoOptionBar from './components/Todo/TodoOptionBar';
+import ToggleThemeButton from './components/UI/Buttons/ToggleThemeButton';
 
-import "./App.css";
+import initialTodos from './todos';
+
+import './App.css';
 
 function App() {
   const [todoItem, setTodoItem] = useState([
@@ -18,13 +20,27 @@ function App() {
     { text: "Pick up groceries", id: "5", isChecked: false },
     { text: "Complete Todo App on Frontend Mentor", id: "6", isChecked: false },
   ]);
-  const [visibility, setVisibility] = useState("all");
+
+  // const [todoItem, setTodoItem] = useState(initialTodos);
+
+  // useEffect(() => {
+  //   const storedTodo = localStorage.getItem('todoItem');
+  //   if (storedTodo) {
+  //     setTodoItem(JSON.parse(storedTodo));
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem('todoItem', JSON.stringify(todoItem));
+  // }, [todoItem]);
+
+  const [visibility, setVisibility] = useState('all');
 
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.body.style.backgroundColor =
-      theme === "light" ? "white" : "hsl(235, 21%, 11%)";
+      theme === 'light' ? 'white' : 'hsl(235, 21%, 11%)';
   }, [theme]);
 
   function addTodoHandler(enteredText) {
@@ -65,15 +81,15 @@ function App() {
   }
 
   function showAllItems() {
-    setVisibility("all");
+    setVisibility('all');
   }
 
   function showActiveItems() {
-    setVisibility("active");
+    setVisibility('active');
   }
 
   function showCompletedItems() {
-    setVisibility("completed");
+    setVisibility('completed');
   }
 
   return (
@@ -92,9 +108,9 @@ function App() {
           <TodoList
             items={todoItem.filter(
               (item) =>
-                visibility === "all" ||
-                (visibility === "active" && !item.isChecked) ||
-                (visibility === "completed" && item.isChecked)
+                visibility === 'all' ||
+                (visibility === 'active' && !item.isChecked) ||
+                (visibility === 'completed' && item.isChecked)
             )}
             onCheckItem={(id) => checkItem(id)}
             onDeleteItem={deleteTodoHandler}
