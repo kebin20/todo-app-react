@@ -62,13 +62,12 @@ main {
 
 @media only screen and (min-width: 700px) and (max-width: 1080px) {
   main {
-    top: 25%;
+    top: 19%;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   main {
-    top: 32%;
+    top: 22%;
   }
 }
-
