@@ -59,6 +59,8 @@ I learnt that in order to update the todoitem state (which holds an array of obj
 
 This todolist was also great practice in using a variety of array methods in JavaScript  such as .unshift(), .map() and .filter(). 
 
+I also learnt how to store the todo items in local storage, thanks to a Freecodecamp article which was very helpful.
+
 
 ```js
   function addTodoHandler(enteredText) {
@@ -106,6 +108,8 @@ Of course I will also need to get used to learning on how to use the variety of 
 - [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) - The goto for documentation on array methods, this one in particular helped me with the filter() method.
 
 - [Bobbyhadz](https://bobbyhadz.com/blog/react-set-body-style) - This is a great article which helped me learn how to set styling on the body element in a React app.
+
+- [freeCodeCamp - Joel Olewanle](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) - This is a great article which helped me learn how to use localStorage to store new todoitems and it's state.
 
 
 ## Author
