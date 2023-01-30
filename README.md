@@ -49,6 +49,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- [Vite](https://vitejs.dev/) - Build Tool
 - [React](https://reactjs.org/) - JS library
 
 ### What I learned
