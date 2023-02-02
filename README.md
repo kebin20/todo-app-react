@@ -1,3 +1,7 @@
+![Dark mode](./screenshots/todo-dark.png)
+
+![Light mode](./screenshots/todo-light.png)
+
 # Frontend Mentor - Todo app solution
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -6,7 +10,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -30,11 +33,6 @@ Users should be able to:
 - Clear all completed todos
 - Toggle light and dark mode
 
-### Screenshot
-
-![Dark mode](./screenshots/todo-dark.png)
-
-![Light mode](./screenshots/todo-light.png)
 
 ### Links
 
@@ -60,10 +58,8 @@ I learnt that in order to update the todoitem state (which holds an array of obj
 
 This todolist was also great practice in using a variety of array methods in JavaScript  such as .unshift(), .map() and .filter(). 
 
-I also learnt how to store the todo items in local storage, thanks to a Freecodecamp article which was very helpful.
 
-
-```js
+```jsx
   function addTodoHandler(enteredText) {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = [...prevTodoItem];
@@ -95,12 +91,27 @@ I also learnt how to store the todo items in local storage, thanks to a Freecode
   }
 ```
 
+I also learnt how to store the todo items in local storage, thanks to a Freecodecamp article which was very helpful.
+
+```jsx
+  useEffect(() => {
+    const storedTodo = JSON.parse(localStorage.getItem('todoItem'));
+    if (storedTodo) {
+      setTodoItem(storedTodo);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todoItem', JSON.stringify(todoItem));
+  }, [todoItem]);
+```
 
 ### Continued development
 
 I think I need to learn a more effective way of doing styling for react components so I'm thinking of learning about styled components and possibly using tailwind for React projects. I also may want to get used to using CSS modules more but I was struggling to create conditional logic with it. 
 Of course I will also need to get used to learning on how to use the variety of JavaScript methods used for projects.
 
+I could also refactor this project more by putting more repeated code within my context component and expand it beyond changing the theme.
 
 ### Useful resources
 
