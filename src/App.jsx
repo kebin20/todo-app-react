@@ -9,21 +9,25 @@ import ToggleThemeButton from './components/UI/Buttons/ToggleThemeButton';
 
 import initialTodos from './todos';
 
+/* Firebase Link */
+/* https://react-todo-ca214-default-rtdb.firebaseio.com/ */
+
 import './App.css';
 
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
 
-  useEffect(() => {
-    const storedTodo = JSON.parse(localStorage.getItem('todoItem'));
-    if (storedTodo) {
-      setTodoItem(storedTodo);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedTodo = JSON.parse(localStorage.getItem('todoItem'));
+  //   if (storedTodo) {
+  //     setTodoItem(storedTodo);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem('todoItem', JSON.stringify(todoItem));
-  }, [todoItem]);
+  // useEffect(() => {
+  //   localStorage.setItem('todoItem', JSON.stringify(todoItem));
+  // }, [todoItem]);
+
 
   const [visibility, setVisibility] = useState('all');
 
