@@ -28,6 +28,11 @@ function App() {
   }, [theme]);
 
   /* Editing functions */
+
+  function clearAllTodos() {
+    setTodoItem([]);
+  }
+
   function addTodoHandler(enteredText) {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = [...prevTodoItem];
@@ -109,7 +114,7 @@ function App() {
   //     setError(error.message);
   //   }
   //   setIsLoading(false);
-  // }, []);
+  // }, [clearAllTodos]);
 
   // useEffect(() => {
   //   fetchTodoHandler();
@@ -191,7 +196,7 @@ function App() {
             onShowActiveItems={showActiveItems}
             onShowCompletedItems={showCompletedItems}
           />
-          <ClearAllButton onClearAllTodos={() => setTodoItem([])} />
+          <ClearAllButton onClearAllTodos={clearAllTodos} />
         </div>
       </main>
     </React.Fragment>
