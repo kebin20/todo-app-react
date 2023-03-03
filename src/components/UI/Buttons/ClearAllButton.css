@@ -1,0 +1,11 @@
+.clear-all-btn {
+  padding: 1em;
+  border-radius: 8px;
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+}
+
+.clear-all-btn:hover {
+  color: #ef476f;
+}

@@ -1,15 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ThemeContext } from "./themeContext";
+import React, { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from './themeContext';
 
 /* components */
-import TodoInput from "./components/Todo/TodoInput";
-import TodoList from "./components/Todo/TodoList";
-import TodoOptionBar from "./components/Todo/TodoOptionBar";
-import ToggleThemeButton from "./components/UI/Buttons/ToggleThemeButton";
+import TodoInput from './components/Todo/TodoInput';
+import TodoList from './components/Todo/TodoList';
+import TodoOptionBar from './components/Todo/TodoOptionBar';
+import ToggleThemeButton from './components/UI/Buttons/ToggleThemeButton';
+import ClearAllButton from './components/UI/Buttons/ClearAllButton';
 
-import initialTodos from "./todos";
+import initialTodos from './todos';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
@@ -17,13 +18,13 @@ function App() {
   // const [error, setError] = useState(null);
 
   /* Change theme function */
-  const [visibility, setVisibility] = useState("all");
+  const [visibility, setVisibility] = useState('all');
 
   const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.body.style.backgroundColor =
-      theme === "light" ? "white" : "hsl(235, 21%, 11%)";
+      theme === 'light' ? 'white' : 'hsl(235, 21%, 11%)';
   }, [theme]);
 
   /* Editing functions */
@@ -65,28 +66,28 @@ function App() {
   }
 
   function showAllItems() {
-    setVisibility("all");
+    setVisibility('all');
   }
 
   function showActiveItems() {
-    setVisibility("active");
+    setVisibility('active');
   }
 
   function showCompletedItems() {
-    setVisibility("completed");
+    setVisibility('completed');
   }
 
   /* Fetching todo function */
 
   useEffect(() => {
-    const storedTodo = JSON.parse(localStorage.getItem("todoItem"));
+    const storedTodo = JSON.parse(localStorage.getItem('todoItem'));
     if (storedTodo) {
       setTodoItem(storedTodo);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("todoItem", JSON.stringify(todoItem));
+    localStorage.setItem('todoItem', JSON.stringify(todoItem));
   }, [todoItem]);
 
   /* FIREBASE METHOD */
@@ -114,13 +115,8 @@ function App() {
   //   fetchTodoHandler();
   // }, [fetchTodoHandler]);
 
-  // /* Storing initial todoitems */
-  // useEffect(() => {
-  //   setInitialTodoData();
-  // }, []);
-
   // /* Posting data to Firebase */
-  // const setInitialTodoData = useCallback(async () => {
+  // const postTodoData = useCallback(async () => {
   //   const response = await fetch(
   //     "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json",
   //     {
@@ -181,9 +177,9 @@ function App() {
           <TodoList
             items={todoItem.filter(
               (item) =>
-                visibility === "all" ||
-                (visibility === "active" && !item.isChecked) ||
-                (visibility === "completed" && item.isChecked)
+                visibility === 'all' ||
+                (visibility === 'active' && !item.isChecked) ||
+                (visibility === 'completed' && item.isChecked)
             )}
             onCheckItem={(id) => checkItem(id)}
             onDeleteItem={deleteTodoHandler}
@@ -195,6 +191,7 @@ function App() {
             onShowActiveItems={showActiveItems}
             onShowCompletedItems={showCompletedItems}
           />
+          <ClearAllButton onClearAllTodos={() => setTodoItem([])} />
         </div>
       </main>
     </React.Fragment>
