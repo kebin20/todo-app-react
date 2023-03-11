@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useContext } from 'react';
-import './TodoInput.css';
-import CheckButton from './../UI/Buttons/CheckButton';
-import { ThemeContext } from '../../themeContext';
+import React, { useState, useContext, useRef } from "react";
+import "./TodoInput.css";
+import CheckButton from "./../UI/Buttons/CheckButton";
+import { ThemeContext } from "../../themeContext";
 
 function TodoInput(props) {
-  const [enteredValue, setEnteredValue] = useState('');
+  const [enteredValue, setEnteredValue] = useState("");
+
+  const todoInputRef = useRef();
 
   const { theme } = useContext(ThemeContext);
 
@@ -14,9 +16,11 @@ function TodoInput(props) {
   }
 
   function formSubmitHandler(e) {
+    if (todoInputRef.trim().length > 0) {
+      props.onAddTodo(enteredValue);
+    }
     e.preventDefault();
-    props.onAddTodo(enteredValue);
-    setEnteredValue("")
+    setEnteredValue("");
   }
 
   return (
