@@ -127,8 +127,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetchTodoHandler();
-  }, []);
+    if (todoItem.length === 0) {
+      fetchTodoHandler();
+    }
+  }, [todoItem.length]);
 
   // /* Posting data to Firebase */
   // const postTodoData = useCallback(async () => {
@@ -167,8 +169,6 @@ function App() {
       />
     );
   }
-
-  console.log(todoItem);
 
   if (error) {
     content = <p className={`content-placeholder ${theme}`}>{error}</p>;
