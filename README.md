@@ -45,9 +45,11 @@ Users are able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [TypeScript](https://www.typescriptlang.org/) - Strongly typed programming language ontop of JS
 - [Firebase](https://firebase.google.com/) - BaaS
 - [Vite](https://vitejs.dev/) - Build Tool
-- [React](https://reactjs.org/) - JS library
+
 
 ### What I learned
 
