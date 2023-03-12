@@ -2,9 +2,7 @@
 
 ![Light mode](./screenshots/todo-light.png)
 
-# Frontend Mentor - Todo app solution
-
-This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# Todo App built with React 
 
 ## Table of contents
 
@@ -20,9 +18,9 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ## Overview
 
-### The challenge
+### Features
 
-Users should be able to:
+Users are able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
@@ -47,6 +45,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- [Firebase](https://firebase.google.com/) - BaaS
 - [Vite](https://vitejs.dev/) - Build Tool
 - [React](https://reactjs.org/) - JS library
 
@@ -128,7 +127,9 @@ I could also refactor this project more by putting more repeated code within my 
 
 - Frontend Mentor - [@kebin20](https://www.frontendmentor.io/profile/kebin20)
 
+## Frontend Mentor - Todo app solution
 
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
   <!-- /* Fetching todo function (USING localStorage)*/
 
   // useEffect(() => {
