@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
+import { initializeApp } from "firebase/app";
 
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
@@ -11,6 +12,18 @@ import ClearAllButton from "./components/UI/Buttons/ClearAllButton";
 import initialTodos from "./todos";
 
 import "./App.css";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBMxDJO1NpVUKOLzpE39A5hMgurQIyYlpw",
+  authDomain: "react-todo-ca214.firebaseapp.com",
+  databaseURL: "https://react-todo-ca214-default-rtdb.firebaseio.com",
+  projectId: "react-todo-ca214",
+  storageBucket: "react-todo-ca214.appspot.com",
+  messagingSenderId: "668137483676",
+  appId: "1:668137483676:web:cad59596fec4ae1a552c59",
+};
+
+initializeApp(firebaseConfig);
 
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
