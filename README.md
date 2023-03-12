@@ -129,6 +129,18 @@ I could also refactor this project more by putting more repeated code within my 
 - Frontend Mentor - [@kebin20](https://www.frontendmentor.io/profile/kebin20)
 
 
+  <!-- /* Fetching todo function (USING localStorage)*/
+
+  // useEffect(() => {
+  //   const storedTodo = JSON.parse(localStorage.getItem("todoItem"));
+  //   if (storedTodo) {
+  //     setTodoItem(storedTodo);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("todoItem", JSON.stringify(todoItem));
+  // }, [todoItem]); -->
 
 
 

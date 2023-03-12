@@ -33,13 +33,48 @@ function App() {
     setTodoItem([]);
   }
 
-  function addTodoHandler(enteredText) {
-    setTodoItem((prevTodoItem) => {
-      const updatedTodo = [...prevTodoItem];
-      updatedTodo.unshift({ text: enteredText, id: Math.random().toString() });
-      return updatedTodo;
-    });
-  }
+  // function addTodoHandler(enteredText) {
+  //   setTodoItem((prevTodoItem) => {
+  //     const updatedTodo = [...prevTodoItem];
+  //     updatedTodo.unshift({ text: enteredText, id: Math.random().toString() });
+  //     return updatedTodo;
+  //   });
+  // }
+
+  const addTodoHandler = async (enteredText) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json",
+        {
+          method: "POST",
+          body: JSON.stringify({ text: enteredText }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Request failed!");
+      }
+
+      const data = await response.json();
+
+      const generatedId = data.name;
+      const createdTodo = { id: generatedId, text: enteredText };
+
+      setTodoItem((prevTodoItem) => {
+        const updatedTodo = [...prevTodoItem];
+        updatedTodo.unshift(createdTodo);
+        return updatedTodo;
+      });
+    } catch (error) {
+      setError(error.message || "Something went wrong!");
+    }
+    setIsLoading(false);
+  };
 
   function deleteTodoHandler(itemId) {
     setTodoItem((prevTodoItem) => {
@@ -82,19 +117,6 @@ function App() {
     setVisibility("completed");
   }
 
-  /* Fetching todo function */
-
-  // useEffect(() => {
-  //   const storedTodo = JSON.parse(localStorage.getItem("todoItem"));
-  //   if (storedTodo) {
-  //     setTodoItem(storedTodo);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("todoItem", JSON.stringify(todoItem));
-  // }, [todoItem]);
-
   /* FIREBASE METHOD */
   const fetchTodoHandler = useCallback(async () => {
     setIsLoading(true);
@@ -108,6 +130,8 @@ function App() {
       }
 
       const data = await response.json();
+
+      console.log(data);
 
       const loadedTodos = [];
 
@@ -191,17 +215,6 @@ function App() {
       </header>
       <main>
         <div className="main-wrapper">
-          {/* <TodoList
-            items={todoItem.filter(
-              (item) =>
-                visibility === "all" ||
-                (visibility === "active" && !item.isChecked) ||
-                (visibility === "completed" && item.isChecked)
-            )}
-            onCheckItem={(id) => checkItem(id)}
-            onDeleteItem={deleteTodoHandler}
-            onClearCompleted={clearCompletedItems}
-          /> */}
           {content}
           <TodoOptionBar
             onShowAllItems={showAllItems}
