@@ -48,6 +48,13 @@ main {
   background-repeat: no-repeat;
 }
 
+.content-placeholder {
+  text-align: center;
+  padding: 2em;
+  margin: 1em 0em;
+  border-radius: 8px;
+}
+
 @media only screen and (max-width: 375px) {
   main {
     top: 32%;

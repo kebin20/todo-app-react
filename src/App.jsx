@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
 
 /* components */
@@ -14,8 +14,8 @@ import "./App.css";
 
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   /* Change theme function */
   const [visibility, setVisibility] = useState("all");
@@ -84,51 +84,51 @@ function App() {
 
   /* Fetching todo function */
 
-  useEffect(() => {
-    const storedTodo = JSON.parse(localStorage.getItem("todoItem"));
-    if (storedTodo) {
-      setTodoItem(storedTodo);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("todoItem", JSON.stringify(todoItem));
-  }, [todoItem]);
-
-  /* FIREBASE METHOD */
-  // const fetchTodoHandler = useCallback(async () => {
-  //   setIsLoading(true);
-  //   setError(null);
-  //   try {
-  //     const response = await fetch(
-  //       "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json"
-  //     );
-  //     if (!response.ok) {
-  //       throw new Error("An error has occurred");
-  //     }
-
-  //     const data = await response.json();
-
-  //     const loadedTodos = [];
-
-  //     for (const todoKey in data) {
-  //       loadedTodos.push({
-  //         id: todoKey,
-  //         text: data[todoKey].text,
-  //         isChecked: data[todoKey].isChecked,
-  //       });
-  //     }
-
-  //     setTodoItem(loadedTodos);
-  //   } catch (error) {
-  //     setError(error.message);
+  // useEffect(() => {
+  //   const storedTodo = JSON.parse(localStorage.getItem("todoItem"));
+  //   if (storedTodo) {
+  //     setTodoItem(storedTodo);
   //   }
-  //   setIsLoading(false);
   // }, []);
 
   // useEffect(() => {
-  //   fetchTodoHandler();
-  // }, [clearAllTodos]);
+  //   localStorage.setItem("todoItem", JSON.stringify(todoItem));
+  // }, [todoItem]);
+
+  /* FIREBASE METHOD */
+  const fetchTodoHandler = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json"
+      );
+      if (!response.ok) {
+        throw new Error("An error has occurred");
+      }
+
+      const data = await response.json();
+
+      const loadedTodos = [];
+
+      for (const todoKey in data) {
+        loadedTodos.push({
+          id: todoKey,
+          text: data[todoKey].text,
+          isChecked: data[todoKey].isChecked,
+        });
+      }
+
+      setTodoItem(loadedTodos);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchTodoHandler();
+  }, []);
 
   // /* Posting data to Firebase */
   // const postTodoData = useCallback(async () => {
@@ -148,33 +148,35 @@ function App() {
 
   // /* Error Handling */
 
-  // let content = <p>Found no todos.</p>;
+  let content = (
+    <p className={`content-placeholder ${theme}`}>Found no todos.</p>
+  );
 
-  // if (todoItem.length > 0) {
-  //   content = (
-  //     <TodoList
-  //       items={todoItem.filter(
-  //         (item) =>
-  //           visibility === "all" ||
-  //           (visibility === "active" && !item.isChecked) ||
-  //           (visibility === "completed" && item.isChecked)
-  //       )}
-  //       onCheckItem={(id) => checkItem(id)}
-  //       onDeleteItem={deleteTodoHandler}
-  //       onClearCompleted={clearCompletedItems}
-  //     />
-  //   );
-  // }
+  if (todoItem.length > 0) {
+    content = (
+      <TodoList
+        items={todoItem.filter(
+          (item) =>
+            visibility === "all" ||
+            (visibility === "active" && !item.isChecked) ||
+            (visibility === "completed" && item.isChecked)
+        )}
+        onCheckItem={(id) => checkItem(id)}
+        onDeleteItem={deleteTodoHandler}
+        onClearCompleted={clearCompletedItems}
+      />
+    );
+  }
 
-  // console.log(todoItem);
+  console.log(todoItem);
 
-  // if (error) {
-  //   content = <p>{error}</p>;
-  // }
+  if (error) {
+    content = <p className={`content-placeholder ${theme}`}>{error}</p>;
+  }
 
-  // if (isLoading) {
-  //   content = <p>Loading...</p>;
-  // }
+  if (isLoading) {
+    content = <p className={`content-placeholder ${theme}`}>Loading...</p>;
+  }
 
   return (
     <React.Fragment>
@@ -189,7 +191,7 @@ function App() {
       </header>
       <main>
         <div className="main-wrapper">
-          <TodoList
+          {/* <TodoList
             items={todoItem.filter(
               (item) =>
                 visibility === "all" ||
@@ -199,8 +201,8 @@ function App() {
             onCheckItem={(id) => checkItem(id)}
             onDeleteItem={deleteTodoHandler}
             onClearCompleted={clearCompletedItems}
-          />
-          {/* {content} */}
+          /> */}
+          {content}
           <TodoOptionBar
             onShowAllItems={showAllItems}
             onShowActiveItems={showActiveItems}
