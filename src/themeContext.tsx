@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
-const ThemeContext = React.createContext();
+import React, { useState, createContext } from "react";
+const ThemeContext = createContext();
 
 function ThemeContextProvider(props) {
   const [theme, setTheme] = useState("dark");
