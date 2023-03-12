@@ -15,11 +15,14 @@ function TodoInput(props) {
     setEnteredValue(e.target.value);
   }
 
-  function formSubmitHandler(e) {
-    if (todoInputRef.trim().length > 0) {
-      props.onAddTodo(enteredValue);
+  function formSubmitHandler(event) {
+    event.preventDefault();
+
+    const enteredRefValue = todoInputRef.current.value;
+
+    if (enteredRefValue.trim().length > 0) {
+      props.onAddTodo(enteredRefValue);
     }
-    e.preventDefault();
     setEnteredValue("");
   }
 
@@ -30,6 +33,7 @@ function TodoInput(props) {
         <input
           className={theme}
           value={enteredValue}
+          ref={todoInputRef}
           id="no-border"
           placeholder="Create a new todo..."
           type="text"

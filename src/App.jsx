@@ -96,39 +96,39 @@ function App() {
   }, [todoItem]);
 
   /* FIREBASE METHOD */
-  const fetchTodoHandler = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json"
-      );
-      if (!response.ok) {
-        throw new Error("An error has occurred");
-      }
+  // const fetchTodoHandler = useCallback(async () => {
+  //   setIsLoading(true);
+  //   setError(null);
+  //   try {
+  //     const response = await fetch(
+  //       "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json"
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error("An error has occurred");
+  //     }
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      const loadedTodos = [];
+  //     const loadedTodos = [];
 
-      for (const todoKey in data) {
-        loadedTodos.push({
-          id: todoKey,
-          text: data[todoKey].text,
-          isChecked: data[todoKey].isChecked,
-        });
-      }
+  //     for (const todoKey in data) {
+  //       loadedTodos.push({
+  //         id: todoKey,
+  //         text: data[todoKey].text,
+  //         isChecked: data[todoKey].isChecked,
+  //       });
+  //     }
 
-      setTodoItem(loadedTodos);
-    } catch (error) {
-      setError(error.message);
-    }
-    setIsLoading(false);
-  }, []);
+  //     setTodoItem(loadedTodos);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   }
+  //   setIsLoading(false);
+  // }, []);
 
-  useEffect(() => {
-    fetchTodoHandler();
-  }, []);
+  // useEffect(() => {
+  //   fetchTodoHandler();
+  // }, [clearAllTodos]);
 
   // /* Posting data to Firebase */
   // const postTodoData = useCallback(async () => {
