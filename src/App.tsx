@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
+
+/* Firebase */
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
@@ -23,12 +26,41 @@ const firebaseConfig = {
   appId: "1:668137483676:web:cad59596fec4ae1a552c59",
 };
 
-initializeApp(firebaseConfig);
-
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
   const [isLoading, setIsLoading] = useState(false);
+  const [firebaseData, setFirebasedata] = useState();
+
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // init firebase app
+    initializeApp(firebaseConfig);
+
+    // init services
+    const db = getFirestore();
+
+    // collection ref
+    const colRef = collection(db, "todos");
+
+    // get collection data
+    getDocs(colRef)
+      .then((snapshot) => {
+        let todos = [];
+        snapshot.docs.forEach((doc) => {
+          todos.push({
+            ...doc.data(),
+            id: doc.id,
+          });
+        });
+        setFirebasedata(todos);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(firebaseData);
 
   /* Change theme function */
   const [visibility, setVisibility] = useState("all");
@@ -130,7 +162,7 @@ function App() {
     setVisibility("completed");
   }
 
-  /* FIREBASE METHOD */
+  /* FIREBASE METHOD 1*/
   const fetchTodoHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -143,8 +175,6 @@ function App() {
       }
 
       const data = await response.json();
-
-      console.log(data);
 
       const loadedTodos = [];
 
@@ -168,22 +198,6 @@ function App() {
       fetchTodoHandler();
     }
   }, [todoItem.length]);
-
-  // /* Posting data to Firebase */
-  // const postTodoData = useCallback(async () => {
-  //   const response = await fetch(
-  //     "https://react-todo-ca214-default-rtdb.firebaseio.com/todo.json",
-  //     {
-  //       method: "POST",
-  //       body: JSON.stringify(initialTodos),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     }
-  //   );
-  //   const data = await response.json();
-  //   setTodoItem(data);
-  // }, []);
 
   // /* Error Handling */
 
