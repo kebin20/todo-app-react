@@ -93,7 +93,7 @@ input {
 }
 
 input::placeholder {
-  color: hsl(234, 39%, 85%);
+  color: hsla(234, 39%, 85%, 0.621);
 }
 
 /*Theme Toggle*/
