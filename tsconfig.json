@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+      "plugins": [{ "name": "typescript-plugin-css-modules" }],
+      "module": "esnext",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "esnext",
+      "allowJs": true,
+      "jsx": "react",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "noImplicitAny": false,
+      "strictNullChecks": true,
+      "baseUrl": "./",
+      "paths": {
+        "*": ["types/*", "*", ".*"],
+        "src/*": ["src/*"],
+        "assets/*": ["./src/assets/*"],
+        "@@/*": ["./*"],
+        "styles/*": ["src/styles/*"],
+        "images/*": ["src/images/*"],
+        "components/*": ["src/components/*"],
+        "pages/*": ["src/pages/*"],
+        "utils/*": ["src/utils/*"],
+        "css/*": ["src/.module.css/*"],
+      },
+    },
+    
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.js",
+      "src/**/*.jsx"
+    ],
+    "exclude": [
+      "node_modules",
+      "**/*.spec.ts",
+      "**/*.spec.tsx"
+    ]
+  }
