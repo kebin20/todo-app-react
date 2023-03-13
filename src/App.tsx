@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
 
-/* Firebase */
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+// /* Firestore/base */
+// import { initializeApp } from "firebase/app";
+// import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
 
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
@@ -16,51 +16,66 @@ import initialTodos from "./todos";
 
 import "./App.css";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBMxDJO1NpVUKOLzpE39A5hMgurQIyYlpw",
-  authDomain: "react-todo-ca214.firebaseapp.com",
-  databaseURL: "https://react-todo-ca214-default-rtdb.firebaseio.com",
-  projectId: "react-todo-ca214",
-  storageBucket: "react-todo-ca214.appspot.com",
-  messagingSenderId: "668137483676",
-  appId: "1:668137483676:web:cad59596fec4ae1a552c59",
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBMxDJO1NpVUKOLzpE39A5hMgurQIyYlpw",
+//   authDomain: "react-todo-ca214.firebaseapp.com",
+//   databaseURL: "https://react-todo-ca214-default-rtdb.firebaseio.com",
+//   projectId: "react-todo-ca214",
+//   storageBucket: "react-todo-ca214.appspot.com",
+//   messagingSenderId: "668137483676",
+//   appId: "1:668137483676:web:cad59596fec4ae1a552c59",
+// };
 
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
   const [isLoading, setIsLoading] = useState(false);
-  const [firebaseData, setFirebasedata] = useState();
 
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // init firebase app
-    initializeApp(firebaseConfig);
+  /* Firestore Method */
+  // const [firestoreData, setFirestoredata] = useState();
+  // useEffect(() => {
+  //   // init firebase app
+  //   initializeApp(firebaseConfig);
 
-    // init services
-    const db = getFirestore();
+  //   // init services
+  //   const db = getFirestore();
 
-    // collection ref
-    const colRef = collection(db, "todos");
+  //   // collection ref
+  //   const colRef = collection(db, "todos");
 
-    // get collection data
-    getDocs(colRef)
-      .then((snapshot) => {
-        let todos = [];
-        snapshot.docs.forEach((doc) => {
-          todos.push({
-            ...doc.data(),
-            id: doc.id,
-          });
-        });
-        setFirebasedata(todos);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  //   // get collection data
+  //   getDocs(colRef)
+  //     .then((snapshot) => {
+  //       let todos = [];
+  //       snapshot.docs.forEach((doc) => {
+  //         todos.push({
+  //           ...doc.data(),
+  //           id: doc.id,
+  //         });
+  //       });
+  //       setFirestoredata(todos);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
-  console.log(firebaseData);
+  // console.log(firestoreData);
+
+  // function addTodo(enteredText) {
+  //   addDoc(colRef, {
+  //     text: enteredText
+  //   } )
+  // }
+  
+  // function deleteTodo(itemId) {
+  //   const docRef = doc(db, 'todos', itemId)
+  
+  //   deleteDoc(docRef).then(() => {
+      
+  //   })
+  // }
 
   /* Change theme function */
   const [visibility, setVisibility] = useState("all");
@@ -77,14 +92,6 @@ function App() {
   function clearAllTodos() {
     setTodoItem([]);
   }
-
-  // function addTodoHandler(enteredText) {
-  //   setTodoItem((prevTodoItem) => {
-  //     const updatedTodo = [...prevTodoItem];
-  //     updatedTodo.unshift({ text: enteredText, id: Math.random().toString() });
-  //     return updatedTodo;
-  //   });
-  // }
 
   const addTodoHandler = async (enteredText) => {
     setIsLoading(true);
