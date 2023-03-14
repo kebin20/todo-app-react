@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
 
-// /* Firestore/base */
-// import { initializeApp } from "firebase/app";
-// import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
-
 /* components */
 import TodoInput from "./components/Todo/TodoInput";
 import TodoList from "./components/Todo/TodoList";
@@ -16,66 +12,11 @@ import initialTodos from "./todos";
 
 import "./App.css";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyBMxDJO1NpVUKOLzpE39A5hMgurQIyYlpw",
-//   authDomain: "react-todo-ca214.firebaseapp.com",
-//   databaseURL: "https://react-todo-ca214-default-rtdb.firebaseio.com",
-//   projectId: "react-todo-ca214",
-//   storageBucket: "react-todo-ca214.appspot.com",
-//   messagingSenderId: "668137483676",
-//   appId: "1:668137483676:web:cad59596fec4ae1a552c59",
-// };
-
 function App() {
   const [todoItem, setTodoItem] = useState(initialTodos);
   const [isLoading, setIsLoading] = useState(false);
 
   const [error, setError] = useState(null);
-
-  /* Firestore Method */
-  // const [firestoreData, setFirestoredata] = useState();
-  // useEffect(() => {
-  //   // init firebase app
-  //   initializeApp(firebaseConfig);
-
-  //   // init services
-  //   const db = getFirestore();
-
-  //   // collection ref
-  //   const colRef = collection(db, "todos");
-
-  //   // get collection data
-  //   getDocs(colRef)
-  //     .then((snapshot) => {
-  //       let todos = [];
-  //       snapshot.docs.forEach((doc) => {
-  //         todos.push({
-  //           ...doc.data(),
-  //           id: doc.id,
-  //         });
-  //       });
-  //       setFirestoredata(todos);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
-
-  // console.log(firestoreData);
-
-  // function addTodo(enteredText) {
-  //   addDoc(colRef, {
-  //     text: enteredText
-  //   } )
-  // }
-  
-  // function deleteTodo(itemId) {
-  //   const docRef = doc(db, 'todos', itemId)
-  
-  //   deleteDoc(docRef).then(() => {
-      
-  //   })
-  // }
 
   /* Change theme function */
   const [visibility, setVisibility] = useState("all");
@@ -89,9 +30,9 @@ function App() {
 
   /* Editing functions */
 
-  function clearAllTodos() {
+  const clearAllTodos = async () => {
     setTodoItem([]);
-  }
+  };
 
   const addTodoHandler = async (enteredText) => {
     setIsLoading(true);
@@ -128,12 +69,34 @@ function App() {
     setIsLoading(false);
   };
 
-  function deleteTodoHandler(itemId) {
-    setTodoItem((prevTodoItem) => {
-      const updatedTodo = prevTodoItem.filter((item) => item.id !== itemId);
-      return updatedTodo;
-    });
-  }
+  const deleteTodoHandler = async (itemId) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(
+        `https://react-todo-ca214-default-rtdb.firebaseio.com/todo/${itemId}.json`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to delete item");
+      }
+
+      setTodoItem((prevTodoItem) => {
+        const updatedTodo = prevTodoItem.filter((item) => item.id !== itemId);
+        return updatedTodo;
+      });
+    } catch (error) {
+      setError(error.message || "Something went wrong!");
+    }
+    setIsLoading(false);
+  };
 
   function checkItem(itemId) {
     setTodoItem((prevTodoItem) => {
