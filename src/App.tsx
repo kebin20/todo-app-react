@@ -96,7 +96,7 @@ function App() {
     setIsLoading(false);
   };
 
-  const deleteTodoHandler = async (itemId) => {
+  const deleteTodoHandler = async (itemId: string) => {
     setIsLoading(true);
     setError(null);
 
@@ -125,7 +125,7 @@ function App() {
     setIsLoading(false);
   };
 
-  function checkTodo(itemId) {
+  function checkTodo(itemId: string) {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = prevTodoItem.map((todo) => {
         if (todo.id === itemId) {

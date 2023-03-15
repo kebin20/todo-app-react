@@ -12,14 +12,23 @@ export interface TodoType {
 }
 
 //https://stackoverflow.com/questions/63739711/type-string-has-no-properties-in-common-with-type-propertiesreacttext-strin
-export interface TodoItemType {
+export interface TodoListType {
+  id: string;
+  style: CSSProperties;
+  onClearCompleted?: () => void;
+  onDeleteTodo: (id: string) => void;
+  onCheckTodo: (id: string) => void;
+  items: {
     id: string;
-    style: CSSProperties;
-    onDeleteTodo: (id: string) => void;
-    onCheckTodo: (id: string) => void;
+    text: string;
     isChecked: boolean;
-    children?: ReactNode;
-  };
+  }[];
+}
+
+export interface TodoItemType extends TodoListType {
+  isChecked: boolean;
+  children?: ReactNode;
+}
 
 //https://stackoverflow.com/questions/71788254/react-18-typescript-children-fc
 export type Props = {

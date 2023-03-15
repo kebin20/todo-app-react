@@ -3,8 +3,9 @@ import React, { useContext } from "react";
 import "./TodoList.css";
 import { ThemeContext } from "../../themeContext";
 import TodoItem from "./TodoItem";
+import { TodoListType } from "src/interfaces";
 
-function TodoList(props) {
+function TodoList(props: TodoListType) {
   const { theme } = useContext(ThemeContext);
 
   const { onCheckTodo, onDeleteTodo, onClearCompleted, items } = props;
@@ -19,6 +20,7 @@ function TodoList(props) {
           id={item.id}
           onDeleteTodo={onDeleteTodo}
           style={{ textDecoration: item.isChecked ? "line-through" : "none" }}
+          items={[]}
         >
           {item.text}
         </TodoItem>
