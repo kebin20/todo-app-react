@@ -45,8 +45,7 @@ function App() {
       theme === "light" ? "white" : "hsl(235, 21%, 11%)";
   }, [theme]);
 
-  /* Editing functions */
-
+  /* read & write functions */
   const clearAllTodos = async () => {
     setTodoItem([]);
     try {
@@ -120,7 +119,7 @@ function App() {
     setIsLoading(false);
   };
 
-  function checkItem(itemId) {
+  function checkTodo(itemId) {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = prevTodoItem.map((todo) => {
         if (todo.id === itemId) {
@@ -135,26 +134,27 @@ function App() {
     });
   }
 
-  function clearCompletedItems() {
+  function clearCompletedTodo() {
     setTodoItem((prevTodoItem) => {
       const updatedTodo = prevTodoItem.filter((item) => !item.isChecked);
       return updatedTodo;
     });
   }
 
-  function showAllItems() {
+  /* display todos depending on conditions */
+  function showAllTodos() {
     setVisibility("all");
   }
 
-  function showActiveItems() {
+  function showActiveTodos() {
     setVisibility("active");
   }
 
-  function showCompletedItems() {
+  function showCompletedTodos() {
     setVisibility("completed");
   }
 
-  /* FIREBASE METHOD 1*/
+  /* Fetching todos from Firebase*/
   const fetchTodoHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -177,7 +177,6 @@ function App() {
           isChecked: data[todoKey].isChecked,
         });
       }
-
       setTodoItem(loadedTodos);
     } catch (error) {
       setError(error.message);
@@ -208,7 +207,7 @@ function App() {
         )}
         onCheckItem={(id) => checkItem(id)}
         onDeleteItem={deleteTodoHandler}
-        onClearCompleted={clearCompletedItems}
+        onClearCompleted={clearCompletedTodo}
       />
     );
   }
@@ -222,7 +221,7 @@ function App() {
   }
 
   return (
-    <React.Fragment>
+    <>
       <header className={`header-${theme}-img`}>
         <div className="nav-wrapper">
           <nav className="nav">
@@ -236,14 +235,14 @@ function App() {
         <div className="main-wrapper">
           {content}
           <TodoOptionBar
-            onShowAllItems={showAllItems}
-            onShowActiveItems={showActiveItems}
-            onShowCompletedItems={showCompletedItems}
+            onShowAllTodos={showAllTodos}
+            onShowActiveTodos={showActiveTodos}
+            onShowCompletedTodos={showCompletedTodos}
           />
           <ClearAllButton onClearAllTodos={clearAllTodos} />
         </div>
       </main>
-    </React.Fragment>
+    </>
   );
 }
 

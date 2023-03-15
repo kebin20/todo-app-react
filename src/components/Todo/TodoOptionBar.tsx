@@ -4,30 +4,30 @@ import "./TodoOptionBar.css";
 import { ThemeContext } from "../../themeContext";
 
 function TodoOptionBar({
-  onShowCompletedItems,
-  onShowActiveItems,
-  onShowAllItems,
+  onShowCompletedTodos,
+  onShowActiveTodos,
+  onShowAllTodos,
 }) {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`${theme} option-bar`}>
       <button
         className={`${theme} option-button`}
-        onClick={onShowAllItems}
+        onClick={onShowAllTodos}
         id="no-border"
       >
         All
       </button>
       <button
         className={`${theme} option-button`}
-        onClick={onShowActiveItems}
+        onClick={onShowActiveTodos}
         id="no-border"
       >
         Active
       </button>
       <button
         className={`${theme} option-button`}
-        onClick={onShowCompletedItems}
+        onClick={onShowCompletedTodos}
         id="no-border"
       >
         Completed
