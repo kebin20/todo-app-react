@@ -11,6 +11,7 @@ export interface TodoType {
   isChecked: boolean;
 }
 
+//https://stackoverflow.com/questions/63739711/type-string-has-no-properties-in-common-with-type-propertiesreacttext-strin
 export interface TodoItemType {
     id: string;
     style: CSSProperties;
