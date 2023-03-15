@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useContext } from "react";
 import "./TodoOptionBar.css";
 import { ThemeContext } from "../../themeContext";

@@ -7,11 +7,11 @@ import TodoItem from "./TodoItem";
 function TodoList(props) {
   const { theme } = useContext(ThemeContext);
 
-  const { onCheckTodo, onDeleteTodo, onClearCompleted } = props;
+  const { onCheckTodo, onDeleteTodo, onClearCompleted, items } = props;
 
   return (
     <ul className={`${theme} todo-list`}>
-      {props.items.map((item) => (
+      {items.map((item) => (
         <TodoItem
           key={item.id}
           isChecked={item.isChecked}

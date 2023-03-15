@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import "./DeleteButton.css";
+import { Props } from "src/interfaces";
 
 function DeleteButton(props) {
   return (

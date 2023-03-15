@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import "./TodoItem.css";
 import CheckButton from "../UI/Buttons/CheckButton";
 import DeleteButton from "../UI/Buttons/DeleteButton";
+import { TodoItemType } from "src/interfaces";
 
-function TodoItem(props) {
+function TodoItem(props: TodoItemType) {
   function deleteHandler() {
     props.onDeleteTodo(props.id);
   }
