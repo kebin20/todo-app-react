@@ -122,6 +122,9 @@ I could also refactor this project more by putting more repeated code within my 
 
 - [freeCodeCamp - Joel Olewanle](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) - This is a great article which helped me learn how to use localStorage to store new todoitems and it's state.
 
+- [Firebase Docs](https://firebase.google.com/docs/database/web/start) - Great quick guide on settin up your database in Firebase
+
+- [Firebase Docs](https://firebase.google.com/docs/database/web/read-and-write) - Guide on reading and removing data
 
 ## Author
 
