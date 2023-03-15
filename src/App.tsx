@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { ThemeContext } from "./themeContext";
 
+import { TodoType } from "./interfaces";
+
 /* Firebase */
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, remove } from "firebase/database";
@@ -55,7 +57,7 @@ function App() {
     }
   };
 
-  const addTodoHandler = async (enteredText) => {
+  const addTodoHandler = async (enteredText: string) => {
     setIsLoading(true);
     setError(null);
     try {
@@ -77,7 +79,11 @@ function App() {
       const data = await response.json();
 
       const generatedId = data.name;
-      const createdTodo = { id: generatedId, text: enteredText };
+      const createdTodo = {
+        id: generatedId,
+        text: enteredText,
+        isChecked: false,
+      };
 
       setTodoItem((prevTodoItem) => {
         const updatedTodo = [...prevTodoItem];
@@ -168,7 +174,7 @@ function App() {
 
       const data = await response.json();
 
-      const loadedTodos = [];
+      const loadedTodos: TodoType[] = [];
 
       for (const todoKey in data) {
         loadedTodos.push({
@@ -205,7 +211,7 @@ function App() {
             (visibility === "active" && !item.isChecked) ||
             (visibility === "completed" && item.isChecked)
         )}
-        onCheckTodo={(id) => checkTodo(id)}
+        onCheckTodo={(id: string) => checkTodo(id)}
         onDeleteTodo={deleteTodoHandler}
         onClearCompleted={clearCompletedTodo}
       />
