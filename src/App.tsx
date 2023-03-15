@@ -141,7 +141,7 @@ function App() {
     });
   }
 
-  /* display todos depending on conditions */
+  /* display todos depending on option selected */
   function showAllTodos() {
     setVisibility("all");
   }
@@ -205,8 +205,8 @@ function App() {
             (visibility === "active" && !item.isChecked) ||
             (visibility === "completed" && item.isChecked)
         )}
-        onCheckItem={(id) => checkItem(id)}
-        onDeleteItem={deleteTodoHandler}
+        onCheckTodo={(id) => checkTodo(id)}
+        onDeleteTodo={deleteTodoHandler}
         onClearCompleted={clearCompletedTodo}
       />
     );
