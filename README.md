@@ -112,6 +112,8 @@ Of course I will also need to get used to learning on how to use the variety of 
 
 I could also refactor this project more by putting more repeated code within my context component and expand it beyond changing the theme.
 
+UPDATE (15/03/23) - Finally implemented Firebase into my code, by enabling users to store, read and write their todos in a realtime database instead of using local storage. 
+
 ### Useful resources
 
 - [Stack Overflow](https://stackoverflow.com/questions/52950627/inline-style-in-react-background-linear-gradient) - This helped me for styling the background and adding a tick svg inside the checkbutton
@@ -122,7 +124,7 @@ I could also refactor this project more by putting more repeated code within my 
 
 - [freeCodeCamp - Joel Olewanle](https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/) - This is a great article which helped me learn how to use localStorage to store new todoitems and it's state.
 
-- [Firebase Docs](https://firebase.google.com/docs/database/web/start) - Great quick guide on settin up your database in Firebase
+- [Firebase Docs](https://firebase.google.com/docs/database/web/start) - Great quick guide on setting up your database in Firebase
 
 - [Firebase Docs](https://firebase.google.com/docs/database/web/read-and-write) - Guide on reading and removing data
 
@@ -133,6 +135,7 @@ I could also refactor this project more by putting more repeated code within my 
 ## Frontend Mentor - Todo app solution
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+
   <!-- /* Fetching todo function (USING localStorage)*/
 
   // useEffect(() => {
