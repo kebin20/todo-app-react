@@ -45,6 +45,7 @@ Users are able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript - Strongly typed programming language on top of JS
 - [Firebase](https://firebase.google.com/) - BaaS
 - [Vite](https://vitejs.dev/) - Build Tool
 - [React](https://reactjs.org/) - JS library
@@ -113,6 +114,8 @@ Of course I will also need to get used to learning on how to use the variety of 
 I could also refactor this project more by putting more repeated code within my context component and expand it beyond changing the theme.
 
 UPDATE (15/03/23) - Finally implemented Firebase into my code, by enabling users to store, read and write their todos in a realtime database instead of using local storage. 
+
+UPDATE (16/03/23) - Implemented the use of Typescript into project. 
 
 ### Useful resources
 
