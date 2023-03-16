@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./ToggleThemeButton.css";
 import { ThemeContext } from "../../../themeContext";
 
-function ToggleThemeButton(props) {
+function ToggleThemeButton() {
   const { toggleTheme, theme } = useContext(ThemeContext);
   return (
     <button

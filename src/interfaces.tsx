@@ -13,8 +13,7 @@ export interface TodoType {
 
 //https://stackoverflow.com/questions/63739711/type-string-has-no-properties-in-common-with-type-propertiesreacttext-strin
 export interface TodoListType {
-  id: string;
-  style: CSSProperties;
+  style?: CSSProperties;
   onClearCompleted?: () => void;
   onDeleteTodo: (id: string) => void;
   onCheckTodo: (id: string) => void;
@@ -27,6 +26,15 @@ export interface TodoListType {
 
 export interface TodoItemType extends TodoListType {
   isChecked: boolean;
+  children?: ReactNode;
+  id: string;
+}
+
+//https://stackoverflow.com/questions/73267615/typescript-button-element-type-attribute
+export interface ButtonComponentType {
+  isChecked?: boolean;
+  type?: "submit" | "reset" | "button" | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children?: ReactNode;
 }
 

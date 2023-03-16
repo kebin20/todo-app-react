@@ -3,11 +3,13 @@ import React, { useContext } from "react";
 
 import { ThemeContext } from "../../../themeContext";
 
+import { ButtonComponentType } from "src/interfaces";
+
 import "./CheckButton.css";
 import tickButtonDarkMode from "./assets/icon-check-darkmode.svg";
 import tickButtonLightMode from "./assets/icon-check-lightmode.svg";
 
-function CheckButton(props) {
+function CheckButton(props: ButtonComponentType) {
   const { theme } = useContext(ThemeContext);
 
   const tickStyle = {

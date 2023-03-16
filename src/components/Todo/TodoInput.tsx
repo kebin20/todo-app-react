@@ -1,27 +1,30 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import "./TodoInput.css";
 import CheckButton from "../UI/Buttons/CheckButton";
 import { ThemeContext } from "../../themeContext";
 
-function TodoInput(props) {
-  const [enteredValue, setEnteredValue] = useState("");
+type AddTodoType = {
+  onAddTodo: (enteredValue: string) => void;
+};
 
-  const todoInputRef = useRef();
+function TodoInput(props: AddTodoType) {
+  const [enteredValue, setEnteredValue] = useState("");
 
   const { theme } = useContext(ThemeContext);
 
-  function todoInputChangeHandler(e) {
-    setEnteredValue(e.target.value);
+  //https://stackoverflow.com/questions/64649055/type-changeeventhtmlinputelement-is-not-assignable-to-type-changeeventhtml
+  //https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-typescript
+  function todoInputChangeHandler(event: React.ChangeEvent<HTMLInputElement>) {
+    setEnteredValue((event.target as HTMLButtonElement).value);
   }
 
-  function formSubmitHandler(event) {
+  //https://stackoverflow.com/questions/68326000/cant-assign-submit-event-type
+  function formSubmitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const enteredRefValue = todoInputRef.current.value;
-
-    if (enteredRefValue.trim().length > 0) {
-      props.onAddTodo(enteredRefValue);
+    if (enteredValue.trim().length > 0) {
+      props.onAddTodo(enteredValue);
     }
     setEnteredValue("");
   }
@@ -33,7 +36,6 @@ function TodoInput(props) {
         <input
           className={theme}
           value={enteredValue}
-          ref={todoInputRef}
           id="no-border"
           placeholder="Create a new todo..."
           type="text"

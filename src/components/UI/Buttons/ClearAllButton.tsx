@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 
-import { ThemeContext } from '../../../themeContext';
-import './ClearAllButton.css';
+import { ThemeContext } from "../../../themeContext";
+import "./ClearAllButton.css";
 
-function ClearAllBtn(props) {
+function ClearAllBtn(props: {
+  onClearAllTodos: React.MouseEventHandler<HTMLButtonElement>;
+}) {
   const { theme } = useContext(ThemeContext);
 
   return (
