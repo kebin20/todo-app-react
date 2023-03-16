@@ -76,6 +76,12 @@ main {
 
 @media only screen and (min-width: 1440px) {
   main {
-    top: 28%;
+    top: 14%;
+  }
+}
+
+@media only screen and (min-width: 1640px) {
+  main {
+    top: 23%;
   }
 }
