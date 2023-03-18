@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { CSSProperties, ReactNode } from "react";
+import React from "react";
 import "./TodoItem.css";
 import CheckButton from "../UI/Buttons/CheckButton";
 import DeleteButton from "../UI/Buttons/DeleteButton";
