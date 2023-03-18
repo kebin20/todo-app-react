@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { DragDropContext } from "react-beautiful-dnd";
 
 import "./TodoList.css";
 import { ThemeContext } from "../../themeContext";
