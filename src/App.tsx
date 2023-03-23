@@ -247,6 +247,7 @@ function App() {
           />
           <ClearAllButton onClearAllTodos={clearAllTodos} />
         </div>
+        <p className={`bottom-text `}>Drag and drop to reorder list</p>
       </main>
     </>
   );
