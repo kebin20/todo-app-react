@@ -11,7 +11,7 @@ export interface TodoType {
   isChecked: boolean;
 }
 
-//https://stackoverflow.com/questions/63739711/type-string-has-no-properties-in-common-with-type-propertiesreacttext-strin
+// https://stackoverflow.com/questions/63739711/type-string-has-no-properties-in-common-with-type-propertiesreacttext-strin
 export interface TodoListType {
   style?: CSSProperties;
   onClearCompleted?: () => void;
@@ -28,9 +28,14 @@ export interface TodoItemType extends TodoListType {
   isChecked: boolean;
   children?: ReactNode;
   id: string;
+  index: number;
+  // https://stackoverflow.com/questions/46063714/how-to-attach-drag-event-handlers-to-a-react-component-using-typescript
+  dragStart: React.DragEventHandler<HTMLLIElement>;
+  dragEnter: React.DragEventHandler<HTMLLIElement>;
+  drop: React.DragEventHandler<HTMLLIElement>;
 }
 
-//https://stackoverflow.com/questions/73267615/typescript-button-element-type-attribute
+// https://stackoverflow.com/questions/73267615/typescript-button-element-type-attribute
 export interface ButtonComponentType {
   isChecked?: boolean;
   type?: "submit" | "reset" | "button" | undefined;
@@ -38,7 +43,7 @@ export interface ButtonComponentType {
   children?: ReactNode;
 }
 
-//https://stackoverflow.com/questions/71788254/react-18-typescript-children-fc
+// https://stackoverflow.com/questions/71788254/react-18-typescript-children-fc
 export type Props = {
   children?: ReactNode;
 };
