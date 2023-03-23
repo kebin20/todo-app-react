@@ -18,7 +18,7 @@
 
 ## Overview
 
-### Features
+### Main Features
 
 Users are able to:
 
@@ -30,7 +30,7 @@ Users are able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-
+- Reorder the todo items in the list
 
 ### Links
 
@@ -117,6 +117,8 @@ UPDATE (15/03/23) - Finally implemented Firebase into my code, by enabling users
 
 UPDATE (16/03/23) - Implemented the use of Typescript into project. 
 
+UPDATE(23/03/23) - Implemented drag and drop feature.
+
 ### Useful resources
 
 - [Stack Overflow](https://stackoverflow.com/questions/52950627/inline-style-in-react-background-linear-gradient) - This helped me for styling the background and adding a tick svg inside the checkbutton
@@ -130,6 +132,8 @@ UPDATE (16/03/23) - Implemented the use of Typescript into project.
 - [Firebase Docs](https://firebase.google.com/docs/database/web/start) - Great quick guide on setting up your database in Firebase
 
 - [Firebase Docs](https://firebase.google.com/docs/database/web/read-and-write) - Guide on reading and removing data
+
+- [Rootstack](https://rootstack.com/en/blog/how-do-i-use-drag-and-drop-react) - This was a great guide on how to implement drag and drop without a library
 
 ## Author
 
