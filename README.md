@@ -30,7 +30,7 @@ Users are able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-- Reorder the todo items in the list
+~- Reorder the todo items in the list~ (WIP: Bug needing to be fixed)
 
 ### Links
 
@@ -118,6 +118,8 @@ UPDATE (15/03/23) - Finally implemented Firebase into my code, by enabling users
 UPDATE (16/03/23) - Implemented the use of Typescript into project. 
 
 UPDATE(23/03/23) - Implemented drag and drop feature.
+
+UPDATE(6/04/23) - Found bug with drag and drop feature where tick button is not being correctly clicked. 
 
 ### Useful resources
 
