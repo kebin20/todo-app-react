@@ -11,13 +11,13 @@ function TodoItem(props: TodoItemType) {
 
   return (
     <li
-      key={props.index}
+      // key={props.index}
       className="todo-item"
       style={props.style}
-      onDragStart={props.dragStart}
-      onDragEnter={props.dragEnter}
-      onDragEnd={props.drop}
-      draggable
+      // onDragStart={props.dragStart}
+      // onDragEnter={props.dragEnter}
+      // onDragEnd={props.drop}
+      // draggable
     >
       <CheckButton
         onClick={() => {
