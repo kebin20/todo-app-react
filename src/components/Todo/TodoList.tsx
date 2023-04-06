@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 
 import "./TodoList.css";
 import { ThemeContext } from "../../themeContext";
@@ -9,38 +9,37 @@ function TodoList(props: TodoListType) {
   const { onCheckTodo, onDeleteTodo, onClearCompleted, items } = props;
 
   const { theme } = useContext(ThemeContext);
-  const [todoList, setTodoList] = useState(items);
+  // const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
 
-  // const dragItem = useRef<number | undefined | null>();
-  // const dragOverItem = useRef<number | undefined | null>();
 
   // const dragStart = (
   //   event: React.DragEvent<HTMLLIElement>,
-  //   position: number | undefined
+  //   position: number
   // ) => {
-  //   dragItem.current = position;
+  //   setDraggedItemIndex(position);
   // };
 
   // const dragEnter = (
   //   event: React.DragEvent<HTMLLIElement>,
-  //   position: number | undefined
+  //   position: number
   // ) => {
-  //   dragOverItem.current = position;
+  //   if (draggedItemIndex !== null) {
+  //     const newItems = [...items];
+  //     const draggedItem = newItems[draggedItemIndex];
+  //     newItems.splice(draggedItemIndex, 1);
+  //     newItems.splice(position, 0, draggedItem);
+  //     setDraggedItemIndex(position);
+  //     props.onDrag(newItems);
+  //   }
   // };
 
-  // const drop = (event: React.DragEvent<HTMLLIElement>) => {
-  //   const copyTodoListItems = [...items];
-  //   const dragItemContent = copyTodoListItems[dragItem.current!];
-  //   copyTodoListItems.splice(dragItem.current!, 1);
-  //   copyTodoListItems.splice(dragOverItem.current!, 0, dragItemContent);
-  //   dragItem.current = null;
-  //   dragOverItem.current = null;
-  //   setTodoList(copyTodoListItems);
+  // const dragEnd = () => {
+  //   setDraggedItemIndex(null);
   // };
 
   return (
     <ul className={`${theme} todo-list`}>
-      {todoList.map((item) => (
+      {items.map((item) => (
         <TodoItem
           key={item.id}
           isChecked={item.isChecked}
@@ -52,7 +51,7 @@ function TodoList(props: TodoListType) {
           // index={index}
           // dragStart={(event) => dragStart(event, index)}
           // dragEnter={(event) => dragEnter(event, index)}
-          // drop={drop}
+          // dragEnd={dragEnd}
         >
           {item.text}
         </TodoItem>

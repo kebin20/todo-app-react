@@ -16,7 +16,7 @@ function TodoItem(props: TodoItemType) {
       style={props.style}
       // onDragStart={props.dragStart}
       // onDragEnter={props.dragEnter}
-      // onDragEnd={props.drop}
+      // onDragEnd={props.dragEnd}
       // draggable
     >
       <CheckButton

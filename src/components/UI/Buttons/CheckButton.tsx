@@ -20,8 +20,6 @@ function CheckButton(props: ButtonComponentType) {
       : "transparent",
   };
 
-  console.log(props.isChecked);
-
   return (
     <button
       type={props.type}
