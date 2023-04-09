@@ -30,7 +30,7 @@ Users are able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-~- Reorder the todo items in the list~ (WIP: Bug needing to be fixed)
+- ~Reorder the todo items in the list~ (WIP: Bug needing to be fixed)
 
 ### Links
 
