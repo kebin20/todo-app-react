@@ -50,6 +50,11 @@ Users are able to:
 - [Vite](https://vitejs.dev/) - Build Tool
 - [React](https://reactjs.org/) - JS library
 
+Testing:
+- [Jest](https://jestjs.io/) - JS Testing Framework
+- [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) - Testing library for React
+
+
 ### What I learned
 
 Coding this app had taught me a a lot when modifying the states of an array, in this case the Todo items array. 
@@ -120,6 +125,8 @@ UPDATE (16/03/23) - Implemented the use of Typescript into project.
 UPDATE(23/03/23) - Implemented drag and drop feature.
 
 UPDATE(6/04/23) - Found bug with drag and drop feature where tick button is not being correctly clicked. 
+
+UPDATE(30/04/23) - Added testing suite with Jest and created a simple test for data fetching.
 
 ### Useful resources
 
