@@ -6,11 +6,10 @@ import TodoItem from "./TodoItem";
 import { TodoListType } from "src/interfaces";
 
 function TodoList(props: TodoListType) {
-  const { onCheckTodo, onDeleteTodo, onClearCompleted, items } = props;
+  const { onCheckTodo, onDeleteTodo, onClearCompleted, items, role } = props;
 
   const { theme } = useContext(ThemeContext);
   // const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
-
 
   // const dragStart = (
   //   event: React.DragEvent<HTMLLIElement>,
@@ -38,7 +37,7 @@ function TodoList(props: TodoListType) {
   // };
 
   return (
-    <ul className={`${theme} todo-list`}>
+    <ul className={`${theme} todo-list`} role={role}>
       {items.map((item) => (
         <TodoItem
           key={item.id}
@@ -48,6 +47,7 @@ function TodoList(props: TodoListType) {
           onDeleteTodo={onDeleteTodo}
           style={{ textDecoration: item.isChecked ? "line-through" : "none" }}
           items={[]}
+          role="listitem"
           // index={index}
           // dragStart={(event) => dragStart(event, index)}
           // dragEnter={(event) => dragEnter(event, index)}

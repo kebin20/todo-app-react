@@ -205,6 +205,7 @@ function App() {
   if (todoItem.length > 0) {
     content = (
       <TodoList
+      role="list"
         items={todoItem.filter(
           (item) =>
             visibility === "all" ||

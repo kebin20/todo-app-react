@@ -17,6 +17,7 @@ export interface TodoListType {
   onClearCompleted?: () => void;
   onDeleteTodo: (id: string) => void;
   onCheckTodo: (id: string) => void;
+  role: string;
   items: {
     id: string;
     text: string;

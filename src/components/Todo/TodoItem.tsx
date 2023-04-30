@@ -11,6 +11,7 @@ function TodoItem(props: TodoItemType) {
 
   return (
     <li
+      role={props.role}
       // key={props.index}
       className="todo-item"
       style={props.style}
